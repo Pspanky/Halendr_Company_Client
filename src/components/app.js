@@ -1,38 +1,28 @@
 
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import '../style.scss';
-import Counter from '../containers/counter';
-import Controls from '../containers/controls';
+// import Survey from './survey';
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
-  return <div><Counter /><Controls />Welcome</div>;
-};
 
 const Nav = (props) => {
   return (
     <nav>
       <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
+        <div>LyfeTracker!</div>
+        <NavLink to="/survey"><button>Fill New Survey</button></NavLink>
+        <NavLink to="/settings"><button>Settings</button></NavLink>
       </ul>
     </nav>
   );
 };
 
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
 
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
 };
+
+// <Route path="/survey" component={Survey} />
 
 
 const App = (props) => {
@@ -41,9 +31,6 @@ const App = (props) => {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
           <Route component={FallBack} />
         </Switch>
       </div>
