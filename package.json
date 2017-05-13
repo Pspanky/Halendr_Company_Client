@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development webpack-dev-server --inline --hot",
+    "start": "set NODE_ENV=development & webpack-dev-server --inline --hot",
     "build": "WEBPACK_ENV=production webpack --colors",
     "clean": "rimraf public/build",
     "deploy": "npm run build; gh-pages -d public; npm run clean",
