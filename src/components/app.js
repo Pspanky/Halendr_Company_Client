@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import '../style.scss';
-// import Survey from './survey';
+import Survey from './survey';
 import Chart from './chart';
 
 
@@ -33,7 +33,9 @@ const App = (props) => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Chart} />
+          <Route path="/survey" component={Survey} />
           <Route component={FallBack} />
+
         </Switch>
       </div>
     </Router>
