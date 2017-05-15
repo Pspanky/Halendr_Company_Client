@@ -9,12 +9,12 @@ import SignUp from './sign-up';
 
 const Nav = (props) => {
   return (
-    <nav>
-      <ul>
-        <div>LyfeTracker!</div>
-        <NavLink to="/survey"><button>Fill New Survey</button></NavLink>
-        <NavLink to="/settings"><button>Settings</button></NavLink>
-      </ul>
+    <nav className="navBar">
+      <NavLink to="/" className="homeLink"> <h2> LyfeTracker! </h2> </NavLink>
+      <div id="navLinks">
+        <NavLink to="/survey"><button className="ButtonLink">Fill New Survey</button></NavLink>
+        <NavLink to="/settings"><button className="ButtonLink">Settings</button></NavLink>
+      </div>
     </nav>
   );
 };
@@ -30,6 +30,15 @@ const App = (props) => {
     <Router>
       <div>
         <Nav />
+
+        <div className="main">
+          <Switch>
+            <Route exact path="/" component={Chart} />
+            <Route path="/survey" component={Survey} />
+            <Route component={FallBack} />
+          </Switch>
+        </div>
+
         <Switch>
           <Route exact path="/" component={Chart} />
           <Route path="/survey" component={Survey} />
