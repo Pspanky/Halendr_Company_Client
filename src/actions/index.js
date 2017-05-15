@@ -1,7 +1,7 @@
+
 // keys for actiontypes
 import axios from 'axios';
-import React from 'react';
-import { connect } from 'react-redux';
+
 
 // keys for actiontypes
 export const ActionTypes = {
