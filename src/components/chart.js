@@ -14,7 +14,9 @@ class Chart extends Component {
 
   render() {
     return (
-      <div>Chart goes here</div>
+      <div>
+        <div>There will be some sort of a line chart to show their results:<img id="chart" alt="chart" src="https://i.stack.imgur.com/pVjoj.png" /></div>
+      </div>
     );
   }
 }
