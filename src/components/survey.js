@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import '../style.scss';
 
 class Survey extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   render() {
     return (
@@ -71,4 +73,4 @@ class Survey extends Component {
   }
 }
 
-export default Survey;
+export default withRouter(connect(null, null)(Survey));
