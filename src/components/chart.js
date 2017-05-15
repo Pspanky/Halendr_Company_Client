@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -14,7 +13,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div>
+      <div className="chartContainer">
         <div>There will be some sort of a line chart to show their results:<img id="chart" alt="chart" src="https://i.stack.imgur.com/pVjoj.png" /></div>
       </div>
     );

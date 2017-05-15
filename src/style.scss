@@ -1,6 +1,9 @@
 body {
   font-family: "Roboto", sans-serif;
   background: darken(white, 0.2);
+  padding: 0;
+  margin: 0;
+  background-color: rgb(229, 230, 232);
 }
 
 .active {
@@ -11,4 +14,109 @@ body {
   display: flex;
   width: 300px;
   height: 200px;
+}
+
+.navBar{
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(108, 123, 139);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+}
+
+.homeLink{
+  position: relative;
+  left: 20px;
+}
+
+#navLinks{
+  position: relative;
+  right: 50px;
+}
+
+.ButtonLink{
+  background-color:rgb(51, 102, 153); /* Green */
+  border: none;
+  color: white;
+  box-shadow: 1px, 1px, 1px, black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.ButtonLink:hover{
+  background-color: white;
+  color: rgb(51, 102, 153);
+}
+
+.survey{
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+.surveyQ{
+  background-color: white;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-radius: 1px;
+  width: 50%;
+  height: 80px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+.surveyButton{
+  position: relative;
+  box-shadow: 1px 1px 1px black;
+  top: 20px;
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  background-color:rgb(51, 102, 153); /* Green */
+  border: none;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.surveyButton:hover{
+  background-color: white;
+  color: rgb(51, 102, 153);
+}
+
+.answers{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.chartContainer{
+  position: relative;
+  margin: auto;
 }

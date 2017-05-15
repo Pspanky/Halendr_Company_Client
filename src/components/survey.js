@@ -9,49 +9,97 @@ class Survey extends Component {
   }
   render() {
     return (
-      <form className="survey">
+      <div className="survey">
+
         <div className="surveyQ">
           <div className="question_heading">
             Question 1
           </div>
           <div className="answers">
-            <input type="radio" value="1" name="q1" />1
-            <input type="radio" value="2" name="q1" />2
-            <input type="radio" value="3" name="q1" />3
-            <input type="radio" value="4" name="q1" />4
+            <div>
+            1<input type="radio" value="1" name="q1" />
+            </div>
+            <div>
+            2<input type="radio" value="2" name="q1" />
+            </div>
+            <div>
+            3<input type="radio" value="3" name="q1" />
+            </div>
+            <div>
+            4<input type="radio" value="4" name="q1" />
+            </div>
+            <div>
+            5<input type="radio" value="5" name="q1" />
+            </div>
           </div>
         </div>
+
         <div className="surveyQ">
           <div className="question_heading">
             Question 2
           </div>
           <div className="answers">
-            <input type="radio" value="1" name="q2" />1
-            <input type="radio" value="2" name="q2" />2
-            <input type="radio" value="3" name="q2" />3
-            <input type="radio" value="4" name="q2" />4
+            <div>
+            1<input type="radio" value="1" name="q2" />
+            </div>
+            <div>
+            2<input type="radio" value="2" name="q2" />
+            </div>
+            <div>
+            3<input type="radio" value="3" name="q2" />
+            </div>
+            <div>
+            4<input type="radio" value="4" name="q2" />
+            </div>
+            <div>
+            5<input type="radio" value="5" name="q2" />
+            </div>
           </div>
         </div>
+
         <div className="surveyQ">
           <div className="question_heading">
             Question 3
           </div>
           <div className="answers">
-            <input type="radio" value="1" name="q3" />1
-            <input type="radio" value="2" name="q3" />2
-            <input type="radio" value="3" name="q3" />3
-            <input type="radio" value="4" name="q3" />4
+            <div>
+            1<input type="radio" value="1" name="q3" />
+            </div>
+            <div>
+            2<input type="radio" value="2" name="q3" />
+            </div>
+            <div>
+            3<input type="radio" value="3" name="q3" />
+            </div>
+            <div>
+            4<input type="radio" value="4" name="q3" />
+            </div>
+            <div>
+            5<input type="radio" value="5" name="q3" />
+            </div>
           </div>
         </div>
+
         <div className="surveyQ">
           <div className="question_heading">
             Question 4
           </div>
           <div className="answers">
-            <input type="radio" value="1" name="q4" />1
-            <input type="radio" value="2" name="q4" />2
-            <input type="radio" value="3" name="q4" />3
-            <input type="radio" value="4" name="q44" />4
+            <div>
+              1<input type="radio" value="1" name="q4" />
+            </div>
+            <div>
+              2<input type="radio" value="2" name="q4" />
+            </div>
+            <div>
+              3<input type="radio" value="3" name="q4" />
+            </div>
+            <div>
+              4<input type="radio" value="4" name="q4" />
+            </div>
+            <div>
+            5<input type="radio" value="5" name="q4" />
+            </div>
           </div>
         </div>
         <div className="surveyQ">
@@ -59,14 +107,25 @@ class Survey extends Component {
             Question 5
           </div>
           <div className="answers">
-            <input type="radio" value="1" name="q5" />1
-            <input type="radio" value="2" name="q5" />2
-            <input type="radio" value="3" name="q5" />3
-            <input type="radio" value="4" name="q5" />4
+            <div>
+            1<input type="radio" value="1" name="q5" />
+            </div>
+            <div>
+            2<input type="radio" value="2" name="q5" />
+            </div>
+            <div>
+            3<input type="radio" value="3" name="q5" />
+            </div>
+            <div>
+            4<input type="radio" value="4" name="q5" />
+            </div>
+            <div>
+            5<input type="radio" value="5" name="q5" />
+            </div>
           </div>
         </div>
-        <button>Submit</button>
-      </form>
+        <button className="surveyButton">Submit</button>
+      </div>
     );
   }
 }
