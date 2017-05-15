@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-do
 import '../style.scss';
 import Survey from './survey';
 import Chart from './chart';
+import SignUp from './sign-up';
 
 
 const Nav = (props) => {
@@ -23,14 +24,13 @@ const FallBack = (props) => {
   return <div>URL Not Found</div>;
 };
 
-// <Route path="/survey" component={Survey} />
-
 
 const App = (props) => {
   return (
     <Router>
       <div>
         <Nav />
+
         <div className="main">
           <Switch>
             <Route exact path="/" component={Chart} />
@@ -38,6 +38,14 @@ const App = (props) => {
             <Route component={FallBack} />
           </Switch>
         </div>
+
+        <Switch>
+          <Route exact path="/" component={Chart} />
+          <Route path="/survey" component={Survey} />
+          <Route path="/signup" component={SignUp} />
+          <Route component={FallBack} />
+
+        </Switch>
       </div>
     </Router>
   );
