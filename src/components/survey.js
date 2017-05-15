@@ -13,12 +13,10 @@ class Survey extends Component {
   }
   componentDidMount() {
     this.props.fetchQuestions();
-    console.log('Questions:');
-    console.log(this.props.questions);
   }
-  componentWillUpdate(nextProps) {
-    this.props.fetchQuestions();
-  }
+  // componentWillUpdate(nextProps) {
+  //   this.props.fetchQuestions();
+  // }
   showQuestions() {
     if (this.props.questions) {
       return (
@@ -47,6 +45,7 @@ class Survey extends Component {
               </div>
             </div>);
         })
+
       );
     } else {
       return (<div>No questions</div>);

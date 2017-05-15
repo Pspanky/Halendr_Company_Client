@@ -18,6 +18,7 @@ export const ActionTypes = {
 export function fetchQuestions() {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/questions${API_KEY}`).then((response) => {
+      console.log(response.data);
       return dispatch({ type: 'FETCH_QUESTIONS',
         payload: { questions: response.data } });
     }).catch((error) => {
