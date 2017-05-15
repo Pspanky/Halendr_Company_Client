@@ -52,10 +52,10 @@ Unsure for now. Possibly by using heroku apps, or by registering our own domain.
 
 ## Authors
 
-Elaine Chiu
-Mahnoor Maqsood
-Paul Spangfort
-Sachin Vadodaria
+Elaine Chiu, 
+Mahnoor Maqsood, 
+Paul Spangfort, 
+Sachin Vadodaria, 
 Drew Waterman
 
 ## Acknowledgments
