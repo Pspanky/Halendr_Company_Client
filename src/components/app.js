@@ -14,6 +14,7 @@ const Nav = (props) => {
       <div id="navLinks">
         <NavLink to="/survey"><button className="ButtonLink">Fill New Survey</button></NavLink>
         <NavLink to="/settings"><button className="ButtonLink">Settings</button></NavLink>
+        <NavLink to="/signup"><button className="ButtonLink">Sign Up</button></NavLink>
       </div>
     </nav>
   );
@@ -30,7 +31,6 @@ const App = (props) => {
     <Router>
       <div>
         <Nav />
-
         <div className="main">
           <Switch>
             <Route exact path="/" component={Chart} />

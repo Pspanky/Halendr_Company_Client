@@ -2,7 +2,8 @@
 // keys for actiontypes
 import axios from 'axios';
 
-const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+// const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 const API_KEY = '';
 
 
