@@ -35,17 +35,12 @@ const App = (props) => {
           <Switch>
             <Route exact path="/" component={Chart} />
             <Route path="/survey" component={Survey} />
+            <Route path="/signup" component={SignUp} />
             <Route component={FallBack} />
           </Switch>
         </div>
 
-        <Switch>
-          <Route exact path="/" component={Chart} />
-          <Route path="/survey" component={Survey} />
-          <Route path="/signup" component={SignUp} />
-          <Route component={FallBack} />
 
-        </Switch>
       </div>
     </Router>
   );
