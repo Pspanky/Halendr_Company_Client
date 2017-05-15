@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-
-import CountReducer from './count-reducer';
+import AuthReducer from './auth-reducer';
+import QReducer from './q-reducer';
 
 const rootReducer = combineReducers({
-  count: CountReducer,
+  questions: QReducer,
+  auth: AuthReducer,
 });
 
 export default rootReducer;
