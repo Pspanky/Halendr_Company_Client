@@ -12,13 +12,13 @@ export const ActionTypes = {
 };
 
 
-const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/';
+const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
 const API_KEY = '';
 
 
 export function fetchQuestions() {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/posts${API_KEY}`).then((response) => {
+    axios.get(`${ROOT_URL}/questions${API_KEY}`).then((response) => {
       dispatch({ type: 'FETCH_QUESTIONS', payload: { questions: response.data } });
     }).catch((error) => {
       console.log(error);

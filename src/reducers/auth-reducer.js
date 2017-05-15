@@ -25,8 +25,6 @@ const AuthReducer = (state = defaultState, action) => {
       });
 
     default:
-      console.log('state');
-      console.log(state);
       return state;
       // return null;
   }
