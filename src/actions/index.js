@@ -2,7 +2,8 @@
 // keys for actiontypes
 import axios from 'axios';
 
-const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+// const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 const API_KEY = '';
 
 
@@ -14,6 +15,22 @@ export const ActionTypes = {
   // AUTH_ERROR: 'AUTH_ERROR',
 };
 
+
+export function signupUser(user, history) {
+  console.log(user);
+  return (dispatch) => {
+    console.log('Trying to signup');
+    console.log(`${ROOT_URL}`);
+    axios.post(`${ROOT_URL}/signup`, user).then((response) => {
+      console.log('signed up!!');
+      history.push('/');
+    }).catch((error) => {
+      console.log('User is hereeeeeee!');
+      console.log(error);
+      console.log('Error');
+    });
+  };
+}
 
 export function fetchQuestions() {
   return (dispatch) => {
