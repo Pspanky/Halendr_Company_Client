@@ -13,6 +13,7 @@ class Survey extends Component {
   }
   componentDidMount() {
     this.props.fetchQuestions();
+    console.log('Questions:');
     console.log(this.props.questions);
   }
   componentWillUpdate(nextProps) {
