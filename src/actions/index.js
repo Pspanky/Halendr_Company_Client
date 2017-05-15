@@ -16,6 +16,22 @@ export const ActionTypes = {
 };
 
 
+export function signupUser(user, history) {
+  console.log(user);
+  return (dispatch) => {
+    console.log('Trying to signup');
+    console.log(`${ROOT_URL}`);
+    axios.post(`${ROOT_URL}/signup`, user).then((response) => {
+      console.log('signed up!!');
+      history.push('/');
+    }).catch((error) => {
+      console.log('User is hereeeeeee!');
+      console.log(error);
+      console.log('Error');
+    });
+  };
+}
+
 export function fetchQuestions() {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/questions${API_KEY}`).then((response) => {
