@@ -53,8 +53,11 @@ class Survey extends Component {
   }
   render() {
     return (
-      <div>
-        {this.showQuestions()}
+      <div className="surveyContainer">
+        <h1 className="pageHeading">Good Morning!</h1>
+        <div>
+          {this.showQuestions()}
+        </div>
       </div>
     );
   }

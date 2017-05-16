@@ -14,7 +14,11 @@ class Chart extends Component {
   render() {
     return (
       <div className="chartContainer">
-        <div>There will be some sort of a line chart to show their results:<img id="chart" alt="chart" src="https://i.stack.imgur.com/pVjoj.png" /></div>
+        <h1 className="pageHeading">Your Statistics</h1>
+        <div className="pageBody">
+          <h3 className="pageBodyText">There will be some sort of a line chart to show their results:</h3>
+          <img id="chart" alt="chart" src="https://i.stack.imgur.com/pVjoj.png" />
+        </div>
       </div>
     );
   }

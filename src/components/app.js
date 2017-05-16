@@ -5,16 +5,19 @@ import '../style.scss';
 import Survey from './survey';
 import Chart from './chart';
 import SignUp from './sign-up';
+import Welcome from './welcome';
+import Settings from './settings';
 
 
 const Nav = (props) => {
   return (
     <nav className="navBar">
-      <NavLink to="/" className="homeLink"> <h2> LyfeTracker! </h2> </NavLink>
+      <NavLink to="/" className="homeLink"> <h2 id="logoText"><span id="logo" className="fa fa-tachometer" /> LyfeTracker!</h2> </NavLink>
       <div id="navLinks">
-        <NavLink to="/survey"><button className="ButtonLink">Fill New Survey</button></NavLink>
-        <NavLink to="/settings"><button className="ButtonLink">Settings</button></NavLink>
-        <NavLink to="/signup"><button className="ButtonLink">Sign Up</button></NavLink>
+        <NavLink to="/survey"><button className="ButtonLink">SURVEY <span id="surveyIcon" className="fa fa-list" /></button></NavLink>
+        <NavLink to="/stats"><button className="ButtonLink">STATISTICS <span id="statsIcon" className="fa fa-bar-chart" /></button></NavLink>
+        <NavLink to="/settings"><button className="ButtonLink">SETTINGS <span id="settingsIcon" className="fa fa-cog" /></button></NavLink>
+        <NavLink to="/signup"><button className="ButtonLink">SIGN UP <span id="signupIcon" className="fa fa-sign-in" /></button></NavLink>
       </div>
     </nav>
   );
@@ -33,7 +36,9 @@ const App = (props) => {
         <Nav />
         <div className="main">
           <Switch>
-            <Route exact path="/" component={Chart} />
+            <Route exact path="/" component={Welcome} />
+            <Route path="/stats" component={Chart} />
+            <Route path="/settings" component={Settings} />
             <Route path="/survey" component={Survey} />
             <Route path="/signup" component={SignUp} />
             <Route component={FallBack} />

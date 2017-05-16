@@ -45,14 +45,16 @@ class SignUp extends Component {
   render() {
     return (
       <div id="newpost">
-        <div id="title">Make your account!</div>
-        <div id="ftitle">First Name: <input id="field" /></div>
-        <div id="ftitle">Last Name: <input id="field" /></div>
-        <div id="ftitle">Email: <input id="field" onChange={this.onEmailChange} value={this.state.email} /></div>
-        <div id="ftitle">Password: <input id="field" onChange={this.onPasswordChange} value={this.state.password} /></div>
-        <div id="buttons1">
-          <button id="button" onClick={this.onButtonClick}>Done!</button>
-          <NavLink to="/"><button id="button2">Cancel</button></NavLink>
+        <div className="pageHeading">Join LyfeTracker Today!</div>
+        <div className="pageBody">
+          <div id="ftitle">FIRST NAME: <input id="field" /></div>
+          <div id="ftitle">LAST NAME: <input id="field" /></div>
+          <div id="ftitle">EMAIL: <input id="field" onChange={this.onEmailChange} value={this.state.email} /></div>
+          <div id="ftitle">PASSWORD: <input id="field" onChange={this.onPasswordChange} value={this.state.password} /></div>
+          <div id="buttons1">
+            <button className="formButtons" id="button" onClick={this.onButtonClick}>JOIN!</button>
+            <NavLink to="/"><button className="formButtons" id="button2">CANCEL</button></NavLink>
+          </div>
         </div>
       </div>
 
