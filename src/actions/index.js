@@ -10,6 +10,7 @@ const API_KEY = '';
 // keys for actiontypes
 export const ActionTypes = {
   FETCH_QUESTIONS: 'FETCH_QUESTIONS',
+  FETCH_METRICS: 'FETCH_METRICS',
   // AUTH_USER: 'AUTH_USER',
   // DEAUTH_USER: 'DEAUTH_USER',
   AUTH_ERROR: 'AUTH_ERROR',
@@ -69,6 +70,19 @@ export function recordMetrics(answers, category) {
       console.log('answers recorded');
     }).catch((err) => {
       console.log(err);
+    });
+  };
+}
+
+
+export function fetchMetrics() {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/metrics${API_KEY}`).then((response) => {
+      console.log(response.data);
+      return dispatch({ type: 'FETCH_METRICS',
+        payload: { metrics: response.data } });
+    }).catch((error) => {
+      console.log(error);
     });
   };
 }
