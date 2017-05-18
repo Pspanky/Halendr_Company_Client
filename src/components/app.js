@@ -7,6 +7,7 @@ import Chart from './chart';
 import SignUp from './sign-up';
 import Welcome from './welcome';
 import Settings from './settings';
+import Signin from '../components/sign-in';
 
 
 const Nav = (props) => {
@@ -17,6 +18,7 @@ const Nav = (props) => {
         <NavLink to="/survey"><button className="ButtonLink">SURVEY <span id="surveyIcon" className="fa fa-list" /></button></NavLink>
         <NavLink to="/stats"><button className="ButtonLink">STATISTICS <span id="statsIcon" className="fa fa-bar-chart" /></button></NavLink>
         <NavLink to="/settings"><button className="ButtonLink">SETTINGS <span id="settingsIcon" className="fa fa-cog" /></button></NavLink>
+        <NavLink to="/signin"><button className="ButtonLink">SIGN IN <span id="signinIcon" className="fa fa-sign-in" /></button></NavLink>
         <NavLink to="/signup"><button className="ButtonLink">SIGN UP <span id="signupIcon" className="fa fa-sign-in" /></button></NavLink>
       </div>
     </nav>
@@ -41,6 +43,7 @@ const App = (props) => {
             <Route path="/settings" component={Settings} />
             <Route path="/survey" component={Survey} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={Signin} />
             <Route component={FallBack} />
           </Switch>
         </div>

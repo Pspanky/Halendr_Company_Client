@@ -1,14 +1,10 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { signupUser } from '../actions';
 import '../style.scss';
 
-
-// //COPIED FROM LAB 5
-
-class SignUp extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +33,7 @@ class SignUp extends Component {
       password: this.state.password,
     };
     console.log(user);
-    this.props.signupUser(user, this.props.history);
+    this.props.signinUser(user, this.props.history);
   }
 
 
@@ -46,12 +42,10 @@ class SignUp extends Component {
       <div id="newpost">
         <div className="pageHeading">Join LyfeTracker Today!</div>
         <div className="pageBody">
-          <div id="ftitle">FIRST NAME: <input id="field" /></div>
-          <div id="ftitle">LAST NAME: <input id="field" /></div>
           <div id="ftitle">EMAIL: <input id="field" onChange={this.onEmailChange} value={this.state.email} /></div>
           <div id="ftitle">PASSWORD: <input id="field" onChange={this.onPasswordChange} value={this.state.password} /></div>
           <div id="buttons1">
-            <button className="formButtons" id="button" onClick={this.onButtonClick}>JOIN!</button>
+            <button className="formButtons" id="button" onClick={this.onButtonClick}>SIGN IN!</button>
             <NavLink to="/"><button className="formButtons" id="button2">CANCEL</button></NavLink>
           </div>
         </div>
@@ -61,4 +55,4 @@ class SignUp extends Component {
   }
 }
 
-export default withRouter(connect(null, { signupUser })(SignUp));
+export default withRouter(connect(null, { signupUser })(SignIn));
