@@ -63,9 +63,9 @@ export function fetchQuestions() {
   };
 }
 
-export function recordAnswers(answers) {
+export function recordMetrics(answers, category) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/answers${API_KEY}`, answers).then((response) => {
+    axios.post(`${ROOT_URL}/answers${API_KEY}`, { answers, category }).then((response) => {
       console.log('answers recorded');
     }).catch((err) => {
       console.log(err);
