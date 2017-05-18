@@ -35,7 +35,7 @@ class Survey extends Component {
   }
 
   recordAnswers() {
-    return this.props.recordMetrics(this.calculateScore());
+    return this.props.recordMetrics(this.calculateScore(), 'sleep');
   }
 
   // given an array of possible answers, it returns them as radio inputs

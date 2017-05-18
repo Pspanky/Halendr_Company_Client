@@ -2,8 +2,8 @@
 // keys for actiontypes
 import axios from 'axios';
 
-const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
 const API_KEY = '';
 
 
@@ -65,7 +65,7 @@ export function fetchQuestions() {
 
 export function recordMetrics(answers, category) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/answers${API_KEY}`, { answers, category }).then((response) => {
+    axios.post(`${ROOT_URL}/metrics${API_KEY}`, { score: answers, category }).then((response) => {
       console.log('answers recorded');
     }).catch((err) => {
       console.log(err);
