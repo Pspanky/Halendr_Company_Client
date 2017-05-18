@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import '../style.scss';
 
+// var Highcharts = require('highcharts');
+
+// Load module after Highcharts is loaded
+// require('highcharts/modules/exporting')(Highcharts);
+
+// Create the chart
+// Highcharts.chart('container', { /*Highcharts options*/ });
+
 
 class Chart extends Component {
   constructor(props) {
