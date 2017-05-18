@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchQuestions, recordAnswers } from '../actions/index';
+import { fetchQuestions, recordMetrics } from '../actions/index';
 import '../style.scss';
 
 class Survey extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sleep: [-1, -1, -1],
+      sleep: [-1, -1, -1, -1],
     };
 
     this.updateSleep = this.updateSleep.bind(this);
@@ -29,12 +29,13 @@ class Survey extends Component {
   }
 
   // sum up all the sleep scores
+  // NOTE: In the future, make sure score doesn't get skewed if q isnt answered
   calculateScore() {
     return this.state.sleep[0] + this.state.sleep[1] + this.state.sleep[2];
   }
 
   recordAnswers() {
-    return this.props.recordAnswers(this.calculateScore());
+    return this.props.recordMetrics(this.calculateScore());
   }
 
   // given an array of possible answers, it returns them as radio inputs
@@ -46,10 +47,14 @@ class Survey extends Component {
     if (answers) {
       return (
         answers.map((q, key) => {
+          // We concatenate the section + key for the id in order to ensure
+          // that the labels get bound to the right radio inputs
           return (
             <div className="answerSection">
               <label htmlFor={section + key.toString()}> {q} </label>
-              <input type="radio" name={section} id={section + key.toString()} value={key} onClick={() => this.updateSleep(key, section)} />
+              <input type="radio" name={section} id={section + key.toString()}
+                value={key} onClick={() => this.updateSleep(key, section)}
+              />
             </div>
           );
         })
@@ -98,4 +103,4 @@ const mapStateToProps = state => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, { fetchQuestions, recordAnswers })(Survey));
+export default withRouter(connect(mapStateToProps, { fetchQuestions, recordMetrics })(Survey));
