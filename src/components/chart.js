@@ -42,6 +42,7 @@ class Chart extends Component {
             {this.props.metrics.map((metric) => {
               return (
                 <div>
+                  <div>Survey Taken On: {metric.date}</div>
                   <div>Category: {metric.category}</div>
                   <div>Score: {metric.score}</div>
                 </div>
