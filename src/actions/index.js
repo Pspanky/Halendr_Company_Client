@@ -12,9 +12,15 @@ export const ActionTypes = {
   FETCH_QUESTIONS: 'FETCH_QUESTIONS',
   // AUTH_USER: 'AUTH_USER',
   // DEAUTH_USER: 'DEAUTH_USER',
-  // AUTH_ERROR: 'AUTH_ERROR',
+  AUTH_ERROR: 'AUTH_ERROR',
 };
 
+export function authError(error) {
+  return {
+    type: ActionTypes.AUTH_ERROR,
+    message: error,
+  };
+}
 
 export function signupUser(user, history) {
   console.log(user);
@@ -27,7 +33,20 @@ export function signupUser(user, history) {
     }).catch((error) => {
       console.log('User is hereeeeeee!');
       console.log(error);
-      console.log('Error');
+    });
+  };
+}
+
+export function signinUser({ email, password }, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/signin`, { email, password })
+    .then((response) => {
+      dispatch({ type: ActionTypes.AUTH_USER });
+      localStorage.setItem('token', response.data.token);
+      history.push('/');
+    })
+    .catch((error) => {
+      dispatch(authError(error));
     });
   };
 }
@@ -40,6 +59,16 @@ export function fetchQuestions() {
         payload: { questions: response.data } });
     }).catch((error) => {
       console.log(error);
+    });
+  };
+}
+
+export function recordAnswers(answers) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/answers${API_KEY}`, answers).then((response) => {
+      console.log('answers recorded');
+    }).catch((err) => {
+      console.log(err);
     });
   };
 }
