@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint src",
     "start": "SET NODE_ENV=development & webpack-dev-server --inline --hot",
     "build": "SET WEBPACK_ENV=production & webpack --colors",
     "clean": "rimraf public/build",
