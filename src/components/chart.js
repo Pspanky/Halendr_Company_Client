@@ -41,10 +41,10 @@ class Chart extends Component {
             <h3 className="pageBodyText">Showing Metrics from previous survey:</h3>
             {this.props.metrics.map((metric) => {
               return (
-                <div>
+                <div id="metrics">
                   <div>Survey Taken On: {metric.date}</div>
                   <div>Category: {metric.category}</div>
-                  <div>Score: {metric.score}</div>
+                  <div>Score: {metric.score}</div><br />
                 </div>
               );
             })}
