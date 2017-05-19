@@ -48,7 +48,7 @@ Finally, we will then make sure that we are able to retrieve said data and chart
 
 ## Deployment
 
-Unsure for now. Possibly by using heroku apps, or by registering our own domain.
+http://steep-spot.surge.sh/
 
 ## Authors
 
