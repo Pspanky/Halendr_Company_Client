@@ -47,7 +47,7 @@ fill out surveys, and then make sure we are able to change our surveys using the
 Finally, we will then make sure that we are able to retrieve said data and chart it on our home page.
 
 ## Progress Update
-For the Dev-site milestone we have set up our site such that 
+For the Dev-site milestone we have set up our site such that the metrics are pulled from the heroku server.
 
 ## Deployment
 
