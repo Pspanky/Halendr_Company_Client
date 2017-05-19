@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "",
+  "description": "Our project is called \"lyfeontrack\" and is intended to help users track the metrics of their day-to-day overall well-being.  Our webapp will prompt users with bi-daily questionaries,  where they can record information about their food, sleep, exercise and/or mental health state for the day. As this information is recorded over time, Lyfeontrack will chart the metrics of each day, which the user can then use to explore how their habits change over time.  Ultimately, we hope this app can be used to gain a deeper understanding of one's habits, and how one can try to change them to lead a better life.",
   "main": "src/index.js",
   "scripts": {
     "test": "eslint src",
