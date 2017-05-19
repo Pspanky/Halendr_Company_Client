@@ -1,3 +1,5 @@
 language: node_js
 node_js:
   - "7"
+after_success:
+  - surge --project /Users/sachinvadodaria/GitHub/finalproject/project-client-lyfeontrack/ --domain steep-spot.surge.sh
