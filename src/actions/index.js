@@ -67,7 +67,28 @@ export function fetchQuestions() {
 export function recordMetrics(answers, category) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/metrics${API_KEY}`, { score: answers, category }).then((response) => {
-      console.log('answers recorded');
+      console.log('metrics recorded');
+    }).catch((err) => {
+      console.log(err);
+    });
+  };
+}
+
+export function createQuestion(question, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/questions${API_KEY}`, question).then((response) => {
+      console.log('question recorded');
+    }).catch((err) => {
+      console.log(err);
+    });
+  };
+}
+
+export function createSurvey(questions, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/surveys${API_KEY}`, questions).then((response) => {
+      console.log('survey recorded');
+      history.push('/');
     }).catch((err) => {
       console.log(err);
     });

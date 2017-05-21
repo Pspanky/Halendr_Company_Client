@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchQuestions, recordMetrics } from '../actions/index';
+import { fetchQuestions, recordMetrics, createQuestion, createSurvey } from '../actions/index';
 import '../style.scss';
 
 class Survey extends Component {
@@ -103,4 +103,5 @@ const mapStateToProps = state => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, { fetchQuestions, recordMetrics })(Survey));
+export default withRouter(connect(mapStateToProps,
+  { fetchQuestions, recordMetrics, createQuestion, createSurvey })(Survey));
