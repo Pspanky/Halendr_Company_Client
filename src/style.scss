@@ -1,255 +1,1610 @@
+
+* {
+   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+input[type='radio'] {
+    -webkit-appearance:none;
+    width:10px;
+    height:10px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+}
+
+input[type='radio']:hover {
+    box-shadow:0.5px 0.5px 1px 0px grey inset;
+}
+
+input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;
+    border-radius:50%;
+}
+
+input[type='radio']:checked:before {
+    box-shadow:0 0 5px 0px grey inset;
+    background-color: #363636;
+}
+
+
 body {
-  font-family: "Roboto", sans-serif;
-  background: darken(white, 0.2);
-  padding: 0;
-  margin: 0;
-  background-color: rgb(229, 230, 232);
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }
 
-#metrics {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Khula', sans-serif;
-  color: #4F4F4F;
-
+.homeBody{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.active {
-  color: white;
-  text-decoration: none;
+.contentBlock{
+    width: 100%;
+    position: relative;
 }
 
-h2{
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 2em;
-}
-#chart{
-  display: flex;
-  width: 800px;
-  height: 500px;
+.flexBlock{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.navBar{
-  position: relative;
-  top: 0px;
-  width: 100%;
-  height: 60px;
-  background-color: #829C9F;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
+.homeHeader{
+    height: 65px;
+    background-color: white;
 }
 
-.pageHeading{
-  display: flex;
-  justify-content: center;
-  font-family: 'Oswald', sans-serif;
-  color: #4F4F4F;
-  font-weight: 200;
-  font-size: 60px;
-  margin: 50px;
+#headerLogo{
+    position:relative;
+    display: block;
+    height: 55px;
+    margin: auto;
+    top: 0px;
 }
 
-.pageSubtitle{
-  font-family: 'Work Sans', sans-serif;
-  display: flex;
-  justify-content: center;
-  color: grey;
+.centerText{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 33px;
 }
 
-#form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.pageBody{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 50px;
-}
-
-.pageBodyText{
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-}
-
-.main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  align-content: center;
-}
-
-.homeLink{
-  position: relative;
-  left: 20px;
-}
-
-#navLinks{
-  position: relative;
-  right: 50px;
-}
-
-.ButtonLink{
-  font-family:'Work Sans', sans-serif;
-  background-color: #829C9F; /* Green */
-  border: none;
-  color: #4F4F4F;
-  box-shadow: 1px, 1px, 1px, black;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 2px;
-  font-size: 18px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.ButtonLink:hover{
-  background-color: white;
-  color: rgb(51, 102, 153);
-}
-
-#surveyButton{
-  position: relative;
-  border-color: #829C9F;
-  border-style: solid;
-  border-radius: 1px;
-  right: 5px;
-}
-
-#surveyButton:hover{
-  background-color: white;
-  border-color: #829C9F;
-  border-style: solid;
-  border-radius: 1px;
-  color: rgb(51, 102, 153);
-}
-
-.survey{
-  position: relative;
-  display: block;
-  margin: auto;
-}
-
-.surveyQ{
-  position: relative;
-  background-color: white;
-  border-style: solid;
-  border-color: #8c8b8b;
-  border-radius: 1px;
-  width: 665px;
-  height: 1250px;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-left: 10px;
-  margin-bottom: 30px;
-}
-
-.question_heading{
-  position: relative;
-  left: 20px;
-}
-
-.surveyButton{
-  position: relative;
-  box-shadow: 1px 1px 1px black;
-  top: 20px;
-  display: block;
-  margin: auto;
-  width: 180px;
-  height: 60px;
-  font-size: 20px;
-  background-color:rgb(51, 102, 153); /* Green */
-  border: none;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.surveyButton:hover{
-  background-color: white;
-  color: rgb(51, 102, 153);
-}
-
-.answers{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.chartContainer{
+.headerLink{
   position: relative;
   margin: auto;
+  width: 130px;
+}
+
+.headerLogoBox{
+    position: relative;
+    height: 48px;
+    width: 130px;
+    top: 10px;
+    background-image: url("https://i.imgur.com/RwwncKh.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+}
+
+.signButtonsContainer{
+    position: relative;
+    display: flex;
+    width: 175px;
+    height: 30px;
+    float: right;
+    top: -23px;
+    flex-direction: row;
+    justify-content: space-between;
+    right: 18px;
+}
+
+.signButton{
+    position: relative;
+    height: 24px;
+    width: 80px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 4px;
+    font-size: 15px;
+}
+
+.logIn{
+    top: 2px;
+}
+
+.signUp{
+    border-style: solid;
+    border-color: #FF0032;
+    border-width: 1px;
+    color: #FF4032;
 }
 
 .divider{
-  height: 0;
-  width: 450px;
-  border-bottom: solid;
-  border-color: rgba(0,0,0, .2);
-  border-radius: 1vh;
-  position: relative;
-  left: 75px;
+    position: relative;
+    width: 89%;
+    height: 1px;
+    background-color: grey;
+    margin: auto;
 }
 
-.answerSection{
-  position: relative;
-  width: 500px;
-  height: 35px;
-  left:40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  align-items: center;
+.eventBackground{
+    position: relative;
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.welcomeContainer{
-  position: relative;
-  height: 1000px;
-  margin: 0;
+.columnSection{
+    position: relative;
+    height: 100%;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-.formButtons{
-  background-color:rgb(103, 140, 137);
-  border: 2px solid rgb(103, 140, 137);
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-  font-size: 24px;
-  border-radius: 6px;
-  outline: none;
-  /* adapted from https://www.w3schools.com/css/css3_buttons.asp */
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
-  margin: 20px;
+
+.eventBodyLeft{
+    width: 570px;
 }
 
-#ftitle{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-  color: rgb(129, 156, 152);
-  font-size: 30px;
+.eventBodyRight{
+    top: 3px;
+    width: 250px;
 }
 
-#field{
-  font-size: 30px;
-  border-radius: 4px;
-  padding: 5px;
-  margin: 10px;
+.eventBlock{
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.eventPhoto{
+    height: 260px;
+    background-color: white;
+    margin-bottom: 0px;
+    background-image: url('https://i.imgur.com/c0V96lN.jpg');
+    background-size: 570px 320px;
+    background-repeat: no-repeat;
+}
+
+
+.starIcon{
+    height: 20px;
+}
+
+.eventTitleTop{
+    position: relative;
+    width: 97%;
+    height: 85px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.eventTitleBlock{
+    height: 150px;
+}
+
+.eventTitleInfo{
+    top: 15px;
+    left: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 270px
+}
+
+.eventTitle{
+    font-size: 30px;
+    color: #323232;
+}
+
+.eventSubTitle{
+    font-size: 14px;
+    display: flex;
+}
+
+.eventSubTitle *{
+    margin-right: 4px;
+    color: gray;
+}
+
+.eventHostName{
+    color: #FF4032;
+}
+
+.eventDate{
+    position: relative;
+    width: 55px;
+    height: 58px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 3px;
+    border-width: 0.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    color: #FF4032;
+    align-items: center;
+    top: 15px;
+}
+
+#eventDateDay{
+    position: relative;
+    top: 2px;
+}
+
+#eventDateNumber{
+    font-size: 16px;
+    color: black;
+}
+
+#eventDateMonth{
+    position: relative;
+    top: -1px;
+}
+
+#eventReviewsBtnContainer{
+    position: relative;
+    left: 115px;
+    top: 8px;
+}
+
+.reviewsButton{
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 33px;
+    text-align: center;
+}
+
+.eventTitleBottom{
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-around;
+}
+
+.eventBottomContainer{
+    position: relative;
+    display: flex;
+    height: 24px;
+    width: 94%;
+    margin: auto;
+    top: 5px;
+}
+
+.eventBottomContainer *{
+    margin-right: 4px;
+}
+
+.textDot{
+    font-size:32px;
+    position: relative;
+    top: -10px;
+}
+
+.Icon{
+    height: 16px;
+    width: 16px;
+    background-size: contain;
+    margin-right: 8px;
+    position: relative;
+    top: -2px;
+}
+
+#timeIcon{
+    background-image: url('https://i.imgur.com/se3vrDT.png');
+}
+
+#locationIcon{
+    background-image: url('https://i.imgur.com/xhq0rsK.png');
+}
+
+#checkIcon{
+    background-image: url('https://i.imgur.com/Jc18qA7.png');
+    position: relative;
+    left: 20px;
+}
+
+.clashText{
+    color: forestgreen;
+    font-size: 12px;
+
+    position: relative;
+    left: 20px;
+}
+
+.eventBottomText{
+    position: relative;
+    font-size: 14px;
+    bottom: 2px;
+    color: dimgray;
+}
+
+.showMapText{
+    font-size: 13px;
+    color: #FF4032;
+    position: relative;
+    top: -2px;
+}
+
+.eventButtonsBlock{
+    height: 60px;
+    background-color: white;
+}
+
+.eventMiscButton{
+    position: relative;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    width: 86px;
+    background-color: #FF4032;
+    border-width: 0px;
+    border-radius: 3px;
+    padding-top: 2px;
+    color: white;
+    margin-right: 6px;
+    left: 20px;
+    top: 11px;
+    font-size: 15px;
+}
+
+.buttonContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-content: center;
+}
+
+#eventShareButton{
+    position: relative;
+    top: 13px;
+}
+
+.goingIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/lfF123n.png');
+    width: 13px;
+    height: 13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 2px;
+    left: 5px;
+}
+
+.shareIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/1lBYkW6.png');
+    width: 14px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 1px;
+    right: 2px;
+}
+
+.moreIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/DN1W9Tm.png');
+    width: 18px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dotIcon{
+    height: 13px;
+    width: 16px;
+}
+
+
+#eventDetailTitle{
+    position: relative;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 45px;
+    padding-left: 32px;
+    font-size: 18px;
+}
+
+.eventBodyText{
+    position: relative;
+    width: 88%;
+    margin: auto;
+    top: 12px;
+    font-size: 15px;
+}
+
+.eventDetailsBlock{
+    height: 260px;
+}
+
+.eventDiscussionBlock{
+    height: 310px;
+}
+
+.discussionContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.discussionComment{
+    position: relative;
+    margin: auto;
+    width: 88%;
+    height: 85px;
+    display: flex;
+}
+
+.discussionTextContainer{
+    position: relative;
+    left: 10px;
+    width: 88%;
+    top: 15px;
+}
+
+.discussionCommentAuthor{
+    font-size: 14px;
+    color: #FF4032;
+}
+
+.discussionCommentText{
+    font-size: 13px;
+}
+
+.userPortrait{
+    position: relative;
+    height: 55px;
+    top: 15px;
+}
+
+.rightSmallBlock{
+    height: 110px;
+}
+
+.smallBlockTitle{
+    height: 50px;
+    position: relative;
+    vertical-align: middle;
+    line-height: 65px;
+    padding-left: 18px;
+    font-size: 16px;
+}
+
+.relatedBlockTitle{
+    position: relative;
+    height: 35px;
+    vertical-align: middle;
+    line-height: 40px;
+    margin: auto;
+    width: 89%;
+}
+
+.attendingIcon{
+    position: relative;
+    width: 20px;
+    top: 23px;
+    float: right;
+    right: 24px;
+}
+
+.attendingBottomContainer{
+    position: relative;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    top: 15px;
+    height: 40px;
+}
+
+.attendingPortraitsContainer{
+    position: relative;
+    display: flex;
+    top: 5px;
+}
+
+.attendingPortrait{
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+}
+
+.attendingNumbers{
+    display: flex;
+    position: relative;
+    top: 9px;
+    font-size: 15px;
+    height: 25px;
+}
+
+.goingNumber{
+    margin-right: 5px;
+}
+
+.eventRelatedBlock{
+    height: 280px;
+}
+
+.relatedEventPreview{
+    position: relative;
+    height: 40px;
+    top: 15px;
+    width: 94%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.relatedEventPreviewImage{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    top: 2px;
+}
+
+.relatedEventPreviewTextContainer{
+    position: relative;
+    width: 136px;
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+    top: 3px;
+    left: 8px;
+}
+
+.relatedEventPreviewTitle{
+    font-size: 12px;
+    color: #605E5B;
+}
+
+.relatedEventPreviewLocation{
+    font-size: 11px;
+    font-style: italic;
+}
+
+.relatedEventPreviwDateContainer{
+    width: 30px;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    top: 4px;
+}
+
+.REPMonth{
+    color: #FF4032;
+}
+
+.REPDate{
+    position: relative;
+    bottom: 2px;
+}
+
+.bigAdBlock{
+    height: 300px;
+    border-radius: 8px;
+    background-image: url("https://i.imgur.com/rk5c6WE.png");
+    position: relative;
+    top: 260px;
+}
+
+.bigAdText{
+    color: white;
+    position: relative;
+    width: 85%;
+    margin: auto;
+    top: 30px;
+}
+
+.bigAdTitle{
+    font-size: 24px;
+}
+
+.bigAdDate{
+    position: relative;
+    font-size: 20px;
+    bottom: 3px;
+}
+
+.footerBlock{
+    height: 60px;
+    background-color: #323232;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footerLinks{
+    vertical-align: middle;
+    position: relative;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-around;
+    left: 30px;
+    font-size: 13px;
+}
+
+.footerLink{
+    color: white;
+}
+
+.footerCopy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 13px;
+}
+
+.languageMenu{
+    color: white;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.copyrightText{
+    color: white;
+    vertical-align: middle;
+    line-height: 60px;
+    font-size: 14px;
+}
+
+.divider25{
+    position: relative;
+    height: 100%;
+    width: 25%;
+}
+
+.divider40{
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.searchbarBlock{
+    position: relative;
+    height: 42px;
+    background-color: #333333;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.searchbarHelper{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 11%;
+}
+
+.searchbarContainer{
+    width: 295px;
+    height: 23px;
+    background-color: white;
+    border: .8px solid #CCCCCC;
+    border-radius: 3px;
+    display: flex;
+    font-size: 10px;
+    vertical-align: middle;
+    line-height: 23px;
+    color: #CCCCCC;
+}
+
+.searchOption{
+    margin-left:2px;
+    margin-right: 2px;
+    text-decoration: underline;
+}
+
+.searchIcon{
+    position: relative;
+    width: 13px;
+    height: 13px;
+    top: 5px;
+    margin-right: 5px;
+}
+
+#searchbarQuery{
+    position: relative;
+    width: 58px;
+    left: 8px;
+}
+
+.createEventButton{
+    position: relative;
+    width: 122px;
+    height: 25px;
+    border: .8px solid white;
+    border-radius: 3px;
+    color: white;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.plusIcon{
+    position: relative;
+    width: 10px;
+    top: 1px;
+}
+
+.timeframeBlock{
+    height: 30px;
+    background-color: white;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.timeframeContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    width: 380px;
+    align-items: center;
+    font-size: 12px;
+    color: #605E5B;
+    left: 10%;
+}
+
+.timeframeOption{
+    position: relative;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+#timeframeExample{
+    height: 27px;
+    border-bottom: 3px solid #FF4032;
+}
+
+.searchResultsBackground{
+    position: relative;
+    height: 600px;
+}
+
+.vertDivider{
+    position: relative;
+    height: 100%;
+    width: 1px;
+    background-color: grey;
+}
+
+.searchResultsBodyContainer{
+    position: relative;
+    height: 100%;
+    width: 700px;
+    margin: auto;
+    display: flex;
+}
+
+#searchResultsBodyLeft{
+    width: 150px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+#searchResultsBodyRight{
+    position: relative;
+    left: 20px;
+    width: 520px;
+    margin-left: 0px;
+}
+
+#topfiller{
+    position: relative;
+    height: 10px;
+}
+
+#filterResultsTitle{
+    position: relative;
+    width: 100px;
+    height: 25px;
+    left: 5px;
+}
+
+.resultsOptionsBox{
+    position: relative;
+    height: 80px;
+}
+
+.resultsOptionsTitle{
+    position: relative;
+    font-size: 10px;
+    color: #363636;
+    left: 6px;
+}
+
+.resultsOptionsChoices{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 9px;
+    color: #605E5B;
+    top: 3px;
+}
+
+.resultsCheckboxContainer{
+    align-items: center;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+#moreOptionsBox{
+    position: relative;
+    top: 2px;
+    left: 5px;
+    color: #0066FF;
+}
+
+#moreOptionPlus{
+    width: 10px;
+    margin-right: 3px;
+}
+
+.resultsCategoriesContainer{
+    position: relative;
+    width: 120px;
+}
+
+.categoryPic{
+    width: 10px;
+    position: relative;
+    top: 1px;
+    margin-right: 2px;
+}
+
+#cCausesC{
+    display: none;
+}
+
+#cCausesU{
+    display:inline-block;
+}
+
+.categoryCheck{
+    top: 5px;
+    left: 7px;
+    height: 18px;
+}
+
+.searchResultsTitle{
+    position: relative;
+    top: 5px;
+    font-size: 28px;
+    color: #605E5B;
+    height: 50px;
+}
+
+.searchResultsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchResultContainer{
+    position: relative;
+    height: 110px;
+    margin-bottom: 15px;
+    background-color: white;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.resultPreview{
+    position: relative;
+    left: 20px;
+
+    width: 73px;
+    height: 73px;
+}
+
+.resultDateInformation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+    right: 33px;
+}
+
+.resultDateDay{
+    position: relative;
+    color: #FF4032;
+    top: 2px;
+}
+
+.resultDateMonth{
+    position: relative;
+    color: #FF4032;
+    bottom: 2px;
+}
+
+.resultTextContainer{
+    width: 245px;
+    position: relative;
+    top: -3px;
+}
+
+.resultTitleContainer{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
+
+.resultTitleContainer *{
+    margin-right: 4px;
+    font-size: 11px;
+}
+
+.resultTitle{
+    position: relative;
+    color: #666666;
+    font-size: 14px;
+    top: -2px;
+}
+
+.resultHost{
+    color: #0066FF;
+}
+
+.resultInformation{
+    position: relative;
+
+    color:#605E5B;
+    font-size: 10px;
+}
+
+.resultButtonContainer{
+    position: relative;
+    display: flex;
+    top: 35px;
+    height: 40px;
+}
+
+.resultGoingButton{
+    position: relative;
+    width: 76px;
+    height: 21px;
+    border: .8px solid rgba(255,64,50, 0.8);
+    border-radius: 3px;
+    color: rgba(255,64,50, 0.8);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin-right: 7px;
+    padding-top: 1px;
+}
+
+.resultGoingIcon{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: 6px;
+    left: 5px;
+}
+
+.resultShareButton{
+    position: relative;
+    width: 68px;
+    height: 22px;
+    border: .8px solid #999999;
+    border-radius: 3px;
+    color: #999999;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.resultShareIcon{
+    height: 13px;
+    position: relative;
+    top: 1px;
+    right: 2px;
+}
+
+.categoryPictureBlock{
+    height: 320px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#categoryArtBlock{
+  background-image: url('https://i.imgur.com/XBtZxYI.png');
+}
+
+
+.categoryTitleContainer{
+    position: relative;
+    top: 100px;
+    font-size: 32px;
+    color: white;
+}
+
+.categoryAdsBlock{
+    height: 1150px;
+    width: 660px;
+    margin: auto;
+}
+
+.categoryAdsTitle{
+    position: relative;
+    height: 120px;
+    font-size: 41px;
+    color: #363636;
+    top: 50px;
+}
+
+.categoryAdsContainer{
+    height: 980px;
+}
+
+.adTextContainer{
+    position: relative;
+    top: 5%;
+    left: 5%;
+    color: white;
+}
+
+.adTextTitle{
+    font-size: 19px;
+}
+
+.adTextDate{
+    font-size: 15px;
+}
+
+.adsHoriBlock{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.adsVertBlock3{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+}
+
+.smallerAds{
+    width: 170px;
+}
+
+.adsVertBlock4{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.ad{
+    border-radius: 5px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.tallAdBig{
+    height: 530px;
+    background-image: url('https://i.imgur.com/rk5c6WE.png');
+}
+
+.tallAdMed{
+    height: 200px;
+    margin-bottom: 15px;
+    background-image: url('https://i.imgur.com/VjgH5CE.png');
+}
+
+.tallAdSmall{
+    height: 200px;
+    background-image: url('http://i65.tinypic.com/v6sz7c.png');
+}
+
+.wideAdMed{
+    width: 380px;
+    height: 100px;
+    background-image:url('http://i65.tinypic.com/v6sz7c.png');
+}
+
+.wideAdBig{
+    width: 100%;
+    height: 220px;
+    background-image: url('https://i.imgur.com/bjV667V.jpg');
+}
+
+.categoryBotBlock{
+    background-color: #FF4032;
+    height: 90px;
+}
+
+.catBotButton{
+    position: relative;
+    width: 320px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: white;
+    font-size: 14px;
+    vertical-align: middle;
+    line-height: 30px;
+    border-radius: 3px;
+    color: white;
+    margin: auto;
+    text-align: center;
+    top: 30px;
+}
+
+.whiteBlockSmall{
+    position: relative;
+    background-color: white;
+    height: 90px;
+}
+
+.whiteBlockMed{
+    position: relative;
+    background-color: white;
+    height: 110px;
+}
+
+.homeHeader{
+    height: 65px;
+    background-color: white;
+}
+
+#headerLogo{
+    position:relative;
+    display: block;
+    height: 55px;
+    margin: auto;
+    top: 0px;
+}
+
+.signButtonsContainer{
+    position: relative;
+    display: flex;
+    width: 175px;
+    height: 50px;
+    float: right;
+    top: -23px;
+    flex-direction: row;
+    justify-content: space-between;
+    right: 18px;
+}
+
+.signButton{
+    position: relative;
+    height: 25px;
+    width: 80px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 3px;
+
+}
+
+.logIn{
+    top: 2px;
+}
+
+.signUp{
+    border-style: solid;
+    border-color: #FF0032;
+    border-width: 1px;
+    color: #FF4032;
+}
+
+.homeSearchBody{
+    height: 380px;
+    background-image: url('https://i.imgur.com/8f4RtcO.jpg');
+}
+
+#hashtagText{
+    position: relative;
+    top: 100px;
+    width: 380px;
+    margin: auto;
+
+
+    font-size: 54px;
+    color: #FF4032;
+}
+
+#searchButtonContainer{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    top: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchButton{
+    color: white;
+    text-align: center;
+    width: 80px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: red;
+    vertical-align: middle;
+    line-height: 35px;
+    font-size: 17px;
+}
+
+.discoverButton{
+    color: #FF4032;
+    text-align: center;
+    width: 240px;
+    height: 33px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,.9);
+    border-style: solid;
+    border-color: #FF4032;
+    border-width: 1px;
+    vertical-align: middle;
+    line-height: 34px;
+    font-size: 15px;
+}
+
+.featuredText{
+    position: relative;
+    top: 70px;
+    color: #FF4032;
+    font-size: 28px;
+    width: 130px;
+    left: 30px;
+}
+
+.featuredBlock{
+    height: 200px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonContainer{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+}
+
+#leftButton{
+    background-image: url('https://i.imgur.com/4I8mdsq.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 1px;
+}
+
+#rightButton{
+    background-image: url('https://i.imgur.com/jQwai5T.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.previewContainer{
+    position: relative;
+    height: 180px;
+    width: 880px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    top: 5px;
+}
+
+.previewBlock{
+    position: relative;
+    height: 170px;
+    width: 202px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.previewImage{
+    position: relative;
+    height: 69%;
+    background-image: url('https://i.imgur.com/3NGr5w5.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.previewInfo{
+    position: relative;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.previewText{
+    position: relative;
+    width: 70%;
+    top: 3px;
+}
+
+.previewDateBox{
+    position: relative;
+    width: 30%;
+    top: 5px;
+}
+
+.previewTitle{
+    position: relative;
+    font-size: 15px;
+    color: #FF4032;
+    left: 5px;
+    font-family: "Open Sans Semibold", sans-serif;
+}
+
+.previewSub{
+    position: relative;
+    font-size: 12px;
+    color: #434343;
+    left: 6px;
+    font-size: 11px;
+}
+
+.previewDate{
+    position: relative;
+    text-align: center;
+    top: 6px;
+}
+
+.dateMonth{
+    color: #FF4032;
+    font-size: 13px;
+}
+
+.dateDay{
+    font-size: 15px;
+}
+
+.redBlock{
+    height: 200px;
+    background-color: #FF4032;
+    text-align: center;
+}
+
+.blockText{
+    top: 60px;
+    position: relative;
+    color: white;
+    font-size: 22px;
+}
+
+.blockSign{
+    position: relative;
+    top: 80px;
+
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+    margin: auto;
+}
+
+.findSomethingBlock{
+    height: 350px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+}
+
+#imageHelper{
+    position: relative;
+    margin: auto;
+    top: 50px;
+    left: 120px;
+    width: 160px;
+    height: 160px;
+
+    background-image: url('https://i.imgur.com/KMXziVM.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.divider25{
+    position: relative;
+    height: 100%;
+    width: 25%;
+}
+
+.divider35{
+    position: relative;
+    height: 100%;
+    width: 35%;
+}
+
+.divider36{
+    position: relative;
+    height: 100%;
+    width: 36%;
+}
+
+
+.divider40{
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.divider50{
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+
+.divider60{
+    position: relative;
+    height: 100%;
+    width: 60%;
+}
+
+#findPosHelp{
+    position: relative;
+    top: 50px;
+    left: 170px;
+    width: 400px
+}
+
+#findTitle{
+    color: #FF4032;
+    font-family: "Open Sans Semibold", sans-serif;
+    font-size: 32px;
+}
+
+#findText{
+    position: relative;
+    color: #434343;
+    width: 100%;
+    font-size: 13px;
+    top: 8px;
+}
+
+#findButton{
+    position: relative;
+    top: 30px;
+    width: 240px;
+    border-radius: 5px;
+    background-color: #FF4032;
+    height: 36px;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    vertical-align: middle;
+    line-height: 37px;
+}
+
+.createEventBlock{
+    background-color: #FF4032;
+    height: 150px;
+    vertical-align: middle;
+    line-height: 150px;
+    display: flex;
+    flex-direction: row;
+}
+
+#createButton{
+    position: relative;
+    display: block;
+    top: 45px;
+    right: 10px;
+    height: 65px;
+    float: right;
+}
+
+#createText{
+    position: relative;
+    font-size: 47px;
+    color: white;
+    width: 350px;
+}
+
+#discover{
+    position: relative;
+    color: #FF4032;
+    margin: auto;
+    text-align: center;
+    font-family: "Segoe UI Semibold";
+    font-size: 50px;
+    top: 15px;
+}
+
+.categoriesBlock{
+    height: 360px;
+}
+
+.categoriesRow{
+    position: relative;
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.categoriesTile{
+    position: relative;
+    width: 20%;
+}
+
+.categoryImage{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mobileBlock{
+    background-color: #FF4032;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+#comingSoon{
+    position: relative;
+    width: 300px;
+    top: 60px;
+    margin: auto;
+    left: 50px;
+
+    color: white;
+    font-size: 32px;
+}
+
+#comingSub{
+    position: relative;
+    width: 300px;
+    top: 70px;
+    margin: auto;
+    left: 50px;
+
+    font-size: 14px;
+    color: #f2f2f2;
+}
+
+.picContainer{
+    height: 90%;
+    top: 10%;
+    margin: auto;
+    position: relative;
+    background-image: url('https://i.imgur.com/PvolGra.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 380px;
+
 }
