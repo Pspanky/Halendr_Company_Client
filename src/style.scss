@@ -141,6 +141,48 @@ body {
     margin: auto;
 }
 
+.searchInput{
+    border-radius: 5px 0px 0px 5px;
+    border-style: none;
+    height: 30px;
+    width: 150px;
+    padding: none;
+    background-color: white;
+    padding-left: 10px;
+}
+
+.searchClick{
+    width: 30px;
+    background-color: white;
+    background-image: url('https://i.imgur.com/gOZKbJe.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 5px;
+}
+
+.searchVariables{
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    height: 32px;
+    font-size: 12px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 32px;
+    border-left: 1px solid grey;
+    color: #666666;
+}
+
+.searchVariables *{
+    margin-left: 4px;
+    margin-right: 0px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
 .eventBackground{
     position: relative;
     width: 100%;
@@ -651,6 +693,14 @@ body {
 
 .footerLink{
     color: white;
+}
+
+.languageContainer{
+    width: 130px;
+    background-color: transparent;
+    color: white;
+    border-color: #605E5B;
+    height: 25px;
 }
 
 .footerCopy{
@@ -1206,16 +1256,17 @@ body {
 
 .signButton{
     position: relative;
-    height: 25px;
+    height: 23px;
     width: 80px;
     border-radius: 3px;
     text-align: center;
-    padding-top: 3px;
-
+    padding-top: 5px;
+    background-color: transparent;
 }
 
 .logIn{
     top: 2px;
+    border-style: none;
 }
 
 .signUp{
@@ -1223,6 +1274,7 @@ body {
     border-color: #FF0032;
     border-width: 1px;
     color: #FF4032;
+    height: 29px;
 }
 
 .homeSearchBody{
@@ -1251,12 +1303,31 @@ body {
     justify-content: space-around;
 }
 
+.flexContainer{
+    position: relative;
+    width: 100%;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#searchButtonContainerTrue{
+    position: relative;
+    width: 480px;
+    height: 40px;
+    top: 120px;
+    margin: auto;
+}
+
 .searchButton{
     color: white;
     text-align: center;
     width: 80px;
     height: 35px;
     border-radius: 3px;
+    border-style: solid;
+    border-color: red;
     background-color: red;
     vertical-align: middle;
     line-height: 35px;
@@ -1280,11 +1351,11 @@ body {
 
 .featuredText{
     position: relative;
-    top: 70px;
+    top: 67px;
     color: #FF4032;
-    font-size: 28px;
+    font-size: 35px;
     width: 130px;
-    left: 30px;
+    left: 32px;
 }
 
 .featuredBlock{
@@ -1540,9 +1611,9 @@ body {
     color: #FF4032;
     margin: auto;
     text-align: center;
-    font-family: "Segoe UI Semibold";
-    font-size: 50px;
-    top: 15px;
+    // font-family: "Segoe UI Semibold";
+    font-size: 64px;
+    top: 5px;
 }
 
 .categoriesBlock{
@@ -1606,5 +1677,4 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     width: 380px;
-
 }

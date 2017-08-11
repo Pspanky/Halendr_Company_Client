@@ -1,7 +1,7 @@
 // keys for actiontypes
 import axios from 'axios';
 
-// export const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
+// export const ROOT_URL = 'https://halendr-api.herokuapp.com/api';
 export const ROOT_URL = 'http://localhost:9090/api';
 
 // keys for actiontypes
@@ -42,7 +42,7 @@ export function createEvent() {
 export function fetchAllEvents() {
   return (dispatch) => {
     axios.get(`${ROOT_URL}/events`).then((response) => {
-      console.log(response);
+      console.log(response.data[0]);
       return dispatch({ type: 'FETCH_ALL_EVENTS',
         payload: { events: response.data } });
     }).catch((error) => {

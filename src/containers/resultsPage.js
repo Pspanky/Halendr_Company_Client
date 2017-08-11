@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { fetchAllEvents } from '../actions';
 import header from '../components/header';
+import { monthConverterShort, monthConverter, dayConverterShort, hourCleaner } from '../helper_functions';
 import '../style.scss';
 
 class resultsPage extends Component {
@@ -9,6 +13,74 @@ class resultsPage extends Component {
     this.state = {
       holder: 0,
     };
+    this.createResultPreview = this.createResultPreview.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.fetchAllEvents();
+  }
+
+  createResultPreview(eventInfo) {
+    if (this.props.events.length === 0) {
+      return (
+        <div />
+      );
+    } else {
+      const eventDate = new Date(eventInfo.date);
+      return (
+        <div className="searchResultContainer">
+          <img className="resultPreview" src="https://i.imgur.com/Jq16yjo.png.png" alt="" />
+          <div className="resultDateInformation">
+            <div className="resultDateDay">
+              {dayConverterShort(eventDate.getDay())}
+            </div>
+            <div className="resultDateDate">
+              {eventDate.getDate()}
+            </div>
+            <div className="resultDateMonth">
+              {monthConverterShort(eventDate.getMonth())}
+            </div>
+          </div>
+          <div className="resultTextContainer">
+            <div className="resultTitleContainer">
+              <div className="resultTitle">
+                {eventInfo.title}
+              </div>
+              <div>·</div>
+              <div>
+              Hosted by
+            </div>
+              <div className="resultHost">
+                <a>
+                  {eventInfo.host}
+                </a>
+              </div>
+            </div>
+            <div className="resultInformation">
+              <div>
+              Tomorrow, {eventDate.getDate()} {monthConverter(eventDate.getMonth())} at {hourCleaner(eventDate.getHours())}
+              </div>
+              <div>
+                {eventInfo.location.name}
+              </div>
+              <div>
+              3 kms away
+            </div>
+            </div>
+          </div>
+          <div className="resultButtonContainer">
+            <div className="resultGoingButton">
+            Going
+            <img className="resultGoingIcon" src="https://i.imgur.com/l7nX6bO.png" alt="" />
+            </div>
+            <div className="resultShareButton">
+              <img className="resultShareIcon" src="https://i.imgur.com/fUhmVZN.pngg" alt="" />
+            Share
+          </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -247,104 +319,8 @@ class resultsPage extends Component {
                 This Week
               </div>
               <div className="searchResultsContainer">
-                <div className="searchResultContainer">
-                  <img className="resultPreview" src="https://i.imgur.com/Jq16yjo.png" alt="" />
-                  <div className="resultDateInformation">
-                    <div className="resultDateDay">
-                      MON
-                    </div>
-                    <div className="resultDateDate">
-                      21
-                    </div>
-                    <div className="resultDateMonth">
-                      JUN
-                    </div>
-                  </div>
-                  <div className="resultTextContainer">
-                    <div className="resultTitleContainer">
-                      <div className="resultTitle">
-                        Annual One-Legged Dog Walk
-                      </div>
-                      <div>·</div>
-                      <div>
-                        Hosted by
-                      </div>
-                      <div className="resultHost">
-                        Hong kong Expats
-                      </div>
-                    </div>
-                    <div className="resultInformation">
-                      <div>
-                        Tomorrow, 21 June at 8:00 pm
-                      </div>
-                      <div>
-                        Hong Kong Park
-                      </div>
-                      <div>
-                        3 kms away
-                      </div>
-                    </div>
-                  </div>
-                  <div className="resultButtonContainer">
-                    <div className="resultGoingButton">
-                      Going
-                      <img className="resultGoingIcon" src="https://i.imgur.com/l7nX6bO.png" alt="" />
-                    </div>
-                    <div className="resultShareButton">
-                      <img className="resultShareIcon" src="https://i.imgur.com/fUhmVZN.pngg" alt="" />
-                      Share
-                    </div>
-                  </div>
-                </div>
-                <div className="searchResultContainer">
-                  <img className="resultPreview" src="https://i.imgur.com/Jq16yjo.png.png" alt="" />
-                  <div className="resultDateInformation">
-                    <div className="resultDateDay">
-                      MON
-                    </div>
-                    <div className="resultDateDate">
-                      21
-                    </div>
-                    <div className="resultDateMonth">
-                      JUN
-                    </div>
-                  </div>
-                  <div className="resultTextContainer">
-                    <div className="resultTitleContainer">
-                      <div className="resultTitle">
-                        Annual One-Legged Dog Walk
-                      </div>
-                      <div>·</div>
-                      <div>
-                        Hosted by
-                      </div>
-                      <div className="resultHost">
-                        Hong kong Expats
-                      </div>
-                    </div>
-                    <div className="resultInformation">
-                      <div>
-                        Tomorrow, 21 June at 8:00 pm
-                      </div>
-                      <div>
-                        Hong Kong Park
-                      </div>
-                      <div>
-                        3 kms away
-                      </div>
-                    </div>
-                  </div>
-                  <div className="resultButtonContainer">
-                    <div className="resultGoingButton">
-                      Going
-                      <img className="resultGoingIcon" src="https://i.imgur.com/l7nX6bO.png" alt="" />
-                    </div>
-                    <div className="resultShareButton">
-                      <img className="resultShareIcon" src="https://i.imgur.com/fUhmVZN.pngg" alt="" />
-                      Share
-                    </div>
-                  </div>
-                </div>
+                {this.createResultPreview(this.props.events[0])}
+                {this.createResultPreview(this.props.events[1])}
                 <div className="searchResultContainer">
                   <img className="resultPreview" src="https://i.imgur.com/Jq16yjo.png.png" alt="" />
                   <div className="resultDateInformation">
@@ -479,5 +455,10 @@ class resultsPage extends Component {
     );
   }
 }
+const mapStateToProps = state => (
+  {
+    events: state.events.events,
+  }
+);
 
-export default resultsPage;
+export default withRouter(connect(mapStateToProps, { fetchAllEvents })(resultsPage));

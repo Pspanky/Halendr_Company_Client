@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Header from '../components/header';
+import header from '../components/header';
 import { createEvent, fetchAllEvents } from '../actions';
+import { monthConverterShort, dayConverter, hourCleaner } from '../helper_functions';
 import '../style.scss';
 
 class homePage extends Component {
@@ -10,22 +11,24 @@ class homePage extends Component {
     super(props);
 
     this.state = {
-      holder: 0,
+      search: false,
     };
-
     this.createEvent = this.createEvent.bind(this);
     this.createEventPreview = this.createEventPreview.bind(this);
-    this.testRouter = this.testRouter.bind(this);
+    this.resultsRouter = this.resultsRouter.bind(this);
     this.homeRouter = this.homeRouter.bind(this);
+    this.searchButtonField = this.searchButtonField.bind(this);
+    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
-  // componentWillMount() {
-  //   this.props.fetchAllEvents();
-  // }
-
-  componentDidMount() {
+  componentWillMount() {
     console.log(this.props.events);
     this.props.fetchAllEvents();
+  }
+
+  toggleSearch() {
+    const currentState = this.state.search;
+    this.setState({ search: !currentState });
   }
 
   createEvent() {
@@ -36,105 +39,23 @@ class homePage extends Component {
     this.props.history.push('/');
   }
 
-  testRouter() {
-    this.props.history.push('/categories');
+  resultsRouter() {
+    this.props.history.push('/results');
   }
 
-  dayConverter(number) { // eslint-disable-line class-methods-use-this
-    let day = '';
-    switch (number) {
-      case 0:
-        day = 'Sunday';
-        break;
-      case 1:
-        day = 'Monday';
-        break;
-      case 2:
-        day = 'Tuesday';
-        break;
-      case 3:
-        day = 'Wednesday';
-        break;
-      case 4:
-        day = 'Thursday';
-        break;
-      case 5:
-        day = 'Friday';
-        break;
-      case 6:
-        day = 'Saturday';
-        break;
-      default:
-        day = '';
-    }
-    return day;
-  }
-
-  hourCleaner(number) { // eslint-disable-line class-methods-use-this
-    const suffix = (number >= 12) ? ' pm' : ' am';
-    const hours = (number > 12) ? number - 12 : number;
-
-    return `${hours}:00${suffix}`;
-  }
-
-  monthConverter(number) { // eslint-disable-line class-methods-use-this
-    let month = '';
-    switch (number) {
-      case 0:
-        month = 'JAN';
-        break;
-      case 1:
-        month = 'FEB';
-        break;
-      case 2:
-        month = 'MAR';
-        break;
-      case 3:
-        month = 'APR';
-        break;
-      case 4:
-        month = 'MAY';
-        break;
-      case 5:
-        month = 'JUN';
-        break;
-      case 6:
-        month = 'JUL';
-        break;
-      case 7:
-        month = 'AUG';
-        break;
-      case 8:
-        month = 'SEP';
-        break;
-      case 9:
-        month = 'OCT';
-        break;
-      case 10:
-        month = 'NOV';
-        break;
-      case 11:
-        month = 'DEC';
-        break;
-      default:
-        month = '';
-    }
-    return month;
-  }
-
-  createEventPreview(eventInfo) {  // eslint-disable-line class-methods-use-this
+  createEventPreview(eventInfo) {
     const eventDate = new Date(eventInfo.date);
     return (
-      <div className="previewBlock" onClick={this.testRouter}>
+      <div className="previewBlock" onClick={this.resultsRouter}>
         <div className="previewImage" />
         <div className="previewInfo">
           <div className="previewText">
             <div className="previewTitle">{eventInfo.title}</div>
-            <div className="previewSub">{this.dayConverter(eventDate.getDay())} at {this.hourCleaner(eventDate.getHours())}</div>
+            <div className="previewSub">{dayConverter(eventDate.getDay())} at {hourCleaner(eventDate.getHours())}</div>
             <div className="previewSub">5 km away</div>
           </div>
           <div className="previewDateBox">
-            <div className="dateMonth previewDate">{this.monthConverter(eventDate.getMonth())}</div>
+            <div className="dateMonth previewDate">{monthConverterShort(eventDate.getMonth())}</div>
             <div className="dateDay previewDate">{eventDate.getDate()}</div>
           </div>
         </div>
@@ -143,7 +64,7 @@ class homePage extends Component {
   }
 
   // makes an array of discrete random numbers in a range
-  generateRandomNumbers(amount, range) { // eslint-disable-line class-methods-use-this
+  generateRandomNumbers(amount, range) {
     let x = 0;
     const indices = [];
     while (x < amount) {
@@ -156,12 +77,51 @@ class homePage extends Component {
     return indices;
   }
 
-  createEventPreviews(eventsList) { // eslint-disable-line class-methods-use-this
+  createEventPreviews(eventsList) {
     const indices = this.generateRandomNumbers(4, eventsList.length);
 
     return indices.map((index) => {
       return this.createEventPreview(eventsList[index]);
     });
+  }
+
+  searchButtonField() {
+    if (!this.state.search) {
+      return (
+        <div id="searchButtonContainer">
+          <button className="searchButton" onClick={this.toggleSearch}>
+            Search
+        </button>
+          <div className="discoverButton">
+            View everything happening now
+        </div>
+        </div>
+      );
+    } else {
+      return (
+        <div id="searchButtonContainerTrue">
+          <div className="flexContainer">
+            <input className="searchInput" />
+            <div className="searchClick" onClick={this.resultsRouter} />
+            <div className="searchVariables">
+            happening
+            <div className="underline">
+              this week
+            </div>
+              <div>
+              within
+            </div>
+              <div className="underline">
+              5 km
+            </div>
+              <div>
+              from Hong Kong
+            </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -170,19 +130,12 @@ class homePage extends Component {
       console.log(this.generateRandomNumbers(4, this.props.events.length));
       return (
         <div className="homeBody">
-          <Header homeRouter={this.homeRouter} />
+          {header()}
           <div className="homeSearchBody contentBlock">
             <div id="hashtagText">
             #halendrandme
           </div>
-            <div id="searchButtonContainer">
-              <button className="searchButton" onClick={this.createEvent}>
-                Search
-            </button>
-              <div className="discoverButton">
-                View everything happening now
-            </div>
-            </div>
+            {this.searchButtonField()}
           </div>
           <div className="whiteBlockMed contentBlock">
             <div className="featuredText">
@@ -192,7 +145,7 @@ class homePage extends Component {
           <div className="featuredBlock contentBlock">
             <div id="leftButton" className="buttonContainer left" />
             <div className="previewContainer">
-              {this.createEventPreviews(this.props.events)}
+              re
             </div>
             <div id="rightButton" className="buttonContainer" />
           </div>
@@ -236,7 +189,7 @@ class homePage extends Component {
           </div>
           <div className="whiteBlockSmall contentBlock" />
           <div className="whiteBlockSmall contentBlock">
-            <div id="discover">Discover</div>
+            <div id="discover"><b>Discover</b></div>
           </div>
           <div className="categoriesBlock contentBlock">
             <div className="categoriesRow">
@@ -324,11 +277,21 @@ class homePage extends Component {
               <a className="footerLink" href="">
               Advertising
             </a>
+              <a className="footerLink" href="">
+            Create an event
+          </a>
             </div>
             <div className="footerCopy divider25">
               <div className="languageMenu">
-              English
-            </div>
+                <select className="languageContainer">
+                  <option>
+                          English
+                      </option>
+                  <option>
+                          Spanish
+                      </option>
+                </select>
+              </div>
               <div className="copyrightText">
               Halendr © 2017
             </div>
@@ -338,7 +301,9 @@ class homePage extends Component {
       );
     } else {
       return (
-        <div />
+        <div>
+        hello testing
+        </div>
       );
     }
   }
