@@ -39,6 +39,10 @@ class homePage extends Component {
     this.props.history.push('/');
   }
 
+  eventRouter() {
+    this.props.history.push('/event');
+  }
+
   resultsRouter() {
     this.props.history.push('/results');
   }
@@ -46,7 +50,7 @@ class homePage extends Component {
   createEventPreview(eventInfo) {
     const eventDate = new Date(eventInfo.date);
     return (
-      <div className="previewBlock" onClick={this.resultsRouter}>
+      <div className="previewBlock" onClick={this.eventRouter}>
         <div className="previewImage" />
         <div className="previewInfo">
           <div className="previewText">
@@ -126,8 +130,7 @@ class homePage extends Component {
 
   render() {
     if (this.props.events.length !== 0) {
-      console.log(this.props.events[0].date);
-      console.log(this.generateRandomNumbers(4, this.props.events.length));
+      // console.log(this.generateRandomNumbers(4, this.props.events.length));
       return (
         <div className="homeBody">
           {header()}
@@ -145,7 +148,7 @@ class homePage extends Component {
           <div className="featuredBlock contentBlock">
             <div id="leftButton" className="buttonContainer left" />
             <div className="previewContainer">
-              re
+              {this.createEventPreviews(this.props.events)}
             </div>
             <div id="rightButton" className="buttonContainer" />
           </div>
@@ -302,7 +305,7 @@ class homePage extends Component {
     } else {
       return (
         <div>
-        hello testing
+          {header()}
         </div>
       );
     }
