@@ -1,53 +1,64 @@
-import React from 'react';
-// import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
-// import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 
-const header = (props) => {
-  return (
-    <div className="homeHeader contentBlock">
-      <div className="headerLogoBox" />
-      <div className="signButtonsContainer">
-        <button className="logIn signButton">
-          Log In
-        </button>
-        <button className="signUp signButton">
-          Sign Up
-        </button>
+class CompanyHeader extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      test: 0,
+    };
+
+    this.homeRouter = this.homeRouter.bind(this);
+    this.newsRouter = this.newsRouter.bind(this);
+    this.pressRouter = this.pressRouter.bind(this);
+    this.investorRouter = this.investorRouter.bind(this);
+    this.jobsRouter = this.jobsRouter.bind(this);
+  }
+
+  homeRouter() {
+    this.props.history.push('/');
+  }
+
+  newsRouter() {
+    this.props.history.push('/news');
+  }
+
+  pressRouter() {
+    this.props.history.push('/press');
+  }
+
+  investorRouter() {
+    this.props.history.push('/investors');
+  }
+
+  jobsRouter() {
+    this.props.history.push('/jobs');
+  }
+
+  render() {
+    return (
+      <div className="testHeader contentBlock">
+        <img src="https://preview.ibb.co/cHby9v/h_Logo_White.png" className="headerLogo" alt="" />
+        <ul className="headerLinks">
+          <li className="headerLink" onClick={this.jobsRouter}>
+            <a>Jobs</a>
+          </li>
+          <li className="headerLink">
+            <a>News</a>
+          </li>
+          <li className="headerLink">
+            <a>Press</a>
+          </li>
+          <li className="headerLink">
+            <a>Investors</a>
+          </li>
+          <li className="headerLink">
+            <a>Halendr for Happiness</a>
+          </li>
+        </ul>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-// class header extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       test: 0,
-//     };
-//     this.homeRouter = this.homeRouter.bind(this);
-//   }
-//
-//   homeRouter() {
-//     this.props.history.push('/');
-//   }
-//
-//   render() {
-//     return (
-//       <div className="homeHeader contentBlock">
-//         <div className="headerLogoBox" onClick={this.homeRouter} />
-//         <div className="signButtonsContainer">
-//           <div className="logIn signButton">
-//           Log In
-//         </div>
-//           <div className="signUp signButton">
-//           Sign Up
-//         </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default withRouter(connect()(header));
-export default header;
+export default CompanyHeader;

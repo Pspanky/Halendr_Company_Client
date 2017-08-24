@@ -45,13 +45,6 @@ body {
     background-color: white;
 }
 
-.homeBody{
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 .contentBlock{
     width: 100%;
     position: relative;
@@ -81,12 +74,6 @@ body {
     text-align: center;
     vertical-align: middle;
     line-height: 33px;
-}
-
-.headerLink{
-  position: relative;
-  margin: auto;
-  width: 130px;
 }
 
 .headerLogoBox{
@@ -530,146 +517,109 @@ body {
     height: 110px;
 }
 
-.smallBlockTitle{
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.homeBody{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+
+.adsHeader{
+    height: 75px;
+    background-color: #FF4032;
+}
+
+.headerLink{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 13px;
+}
+
+.headerLogo{
     height: 50px;
     position: relative;
-    vertical-align: middle;
-    line-height: 65px;
-    padding-left: 18px;
-    font-size: 16px;
+    top: 11px;
+    left: 70px;
 }
 
-.relatedBlockTitle{
-    position: relative;
-    height: 35px;
-    vertical-align: middle;
-    line-height: 40px;
-    margin: auto;
-    width: 89%;
+.aboutBody{
+    background-color: #FF4032;
+    height: 700px;
 }
 
-.attendingIcon{
+.bodyContainer{
     position: relative;
-    width: 20px;
-    top: 23px;
-    float: right;
-    right: 24px;
-}
-
-.attendingBottomContainer{
-    position: relative;
-    width: 85%;
-    margin: auto;
+    width: 88%;
     display: flex;
+    margin: auto;
+    justify-content: space-between;
+    top: 70px;
+}
+
+.colFlex{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.missionStatementContainer{
+    width: 440px;
+}
+
+.contactInfoContainer{
+
+    position: relative;
+    top: 45px;
+    width: 190px;
+}
+
+.statementLogo{
+    position: relative;
+    height: 55px;
+    width: 150px;
+    left: 10px;
+}
+
+.missionStatementText{
     top: 15px;
-    height: 40px;
-}
-
-.attendingPortraitsContainer{
     position: relative;
-    display: flex;
-    top: 5px;
+    color: white;
+    font-size: 14px;
 }
 
-.attendingPortrait{
-    width: 23px;
-    height: 23px;
-    margin-right: 10px;
+.missionStatementText *{
+   position: relative;
+   left: 16px;
+   margin-bottom: 10px;
 }
 
-.attendingNumbers{
-    display: flex;
-    position: relative;
-    top: 9px;
-    font-size: 15px;
-    height: 25px;
-}
-
-.goingNumber{
-    margin-right: 5px;
-}
-
-.eventRelatedBlock{
-    height: 280px;
-}
-
-.relatedEventPreview{
-    position: relative;
-    height: 40px;
-    top: 15px;
-    width: 94%;
-    margin: auto;
+.contactContainer{
     margin-bottom: 15px;
 }
 
-.relatedEventPreviewImage{
+.contactTitle{
+    color: #333333;
+    font-size: 18px;
+}
+
+.contactInfo{
     position: relative;
-    width: 35px;
-    height: 35px;
-    top: 2px;
-}
-
-.relatedEventPreviewTextContainer{
-    position: relative;
-    width: 136px;
-    display: flex;
-    flex-direction: column;
-    height: 35px;
-    top: 3px;
-    left: 8px;
-}
-
-.relatedEventPreviewTitle{
-    font-size: 12px;
-    color: #605E5B;
-}
-
-.relatedEventPreviewLocation{
-    font-size: 11px;
-    font-style: italic;
-}
-
-.relatedEventPreviwDateContainer{
-    width: 30px;
-    font-size: 12px;
-    text-align: center;
-    position: relative;
-    top: 4px;
-}
-
-.REPMonth{
-    color: #FF4032;
-}
-
-.REPDate{
-    position: relative;
-    bottom: 2px;
-}
-
-.bigAdBlock{
-    height: 300px;
-    border-radius: 8px;
-    background-image: url("https://i.imgur.com/rk5c6WE.png");
-    position: relative;
-    top: 260px;
-}
-
-.bigAdText{
+    left: 1px;
+    bottom: 1px;
     color: white;
-    position: relative;
-    width: 85%;
-    margin: auto;
-    top: 30px;
-}
-
-.bigAdTitle{
-    font-size: 24px;
-}
-
-.bigAdDate{
-    position: relative;
-    font-size: 20px;
-    bottom: 3px;
+    font-size: 14px;
 }
 
 .footerBlock{
@@ -688,26 +638,19 @@ body {
     display: flex;
     justify-content: space-around;
     left: 30px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .footerLink{
     color: white;
 }
 
-.languageContainer{
-    width: 130px;
-    background-color: transparent;
-    color: white;
-    border-color: #605E5B;
-    height: 25px;
-}
-
 .footerCopy{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 13px;
+    font-size: 14px;
+    right: 10px;
 }
 
 .languageMenu{
@@ -723,958 +666,482 @@ body {
     font-size: 14px;
 }
 
+.languageContainer{
+    width: 130px;
+    background-color: transparent;
+    color: white;
+    border-color: #605E5B;
+    height: 25px;
+    position: relative;
+    font-size: 14px;
+}
+
+.investorBody{
+    background-color: #FF4032;
+    height: 700px;
+}
+
+.investorTextContainer{
+    position: relative;
+    width: 330px;
+
+    top: 90px;
+    left: 100px;
+}
+
+.investorTextTitle{
+    font-size: 28px;
+    color: #3b3b3b;
+}
+
+.investorTextBody{
+    position: relative;
+    color: white;
+    font-size: 14px;
+    top: 20px;
+    left: 2px;
+}
+
+.investorTextBody *{
+    margin-bottom: 10px;
+}
+
 .divider25{
     position: relative;
     height: 100%;
     width: 25%;
 }
 
-.divider40{
+.divider45{
     position: relative;
     height: 100%;
-    width: 40%;
+    width: 45%;
 }
 
-.searchbarBlock{
+
+.jobsBodyTop{
+    height: 340px;
+    background-color: #FF4032;
+}
+
+.jobsBodyMid{
+    height: 470px;
+}
+
+.jobsBodyBot{
+    height: 190px;
+    background-color: white;
+}
+
+.jobsBodyTopContainer{
+    top: 85px;
     position: relative;
-    height: 42px;
-    background-color: #333333;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 840px;
+}
+
+#jobsBodyTopTitle{
+    color: white;
+    font-size: 34px;
+}
+
+.jobsBodyTopButtonHelper{
+    top: 25px;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.happinessBodyTopText{
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    top: -7px;
+}
+
+.jobsBodyTopText{
+    font-size: 13px;
+    text-align: center;
+}
+
+.browseJobsButton{
+    top: 12px;
+    position: relative;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    border-radius: 4px;
+    height: 28px;
+    width: 90px;
+    font-size: 13px;
+}
+
+.browseProjectsButton{
+    top: 10px;
+    position: relative;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    border-radius: 4px;
+    height: 28px;
+    width: 100px;
+    font-size: 13px;
+}
+
+.jobsBodyMidContainer{
+    top: 180px;
+    position: relative;
+    width: 650px;
+    margin: auto;
+    height: 110px;
+    justify-content: center;
+}
+
+.jobsMidText{
+    text-align: center;
+    font-size: 14px;
+}
+
+.jobsButtonContainer{
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.jobInterestInput{
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    border-width: 1px;
+    margin: 0;
+    width: 210px;
+    position: relative;
+    left: 2px;
+    color: #999999;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.jobInterestButton{
+    background-color: #FF4032;
+    position: relative;;
+    top: -1px;
+    height: 35px;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px 5px 5px 0px;
+    margin: 0;
+    font-size: 13px;
+    width: 60px;
+}
+
+.jobsBotContainer{
+    top: 30px;
+    font-size: 14px;
+    position: relative;
+    width: 82%;
+    margin: auto;
+    color: #666666;
+}
+
+.jobsBotContainer *{
+    margin-bottom: 10px;
+}
+
+.dignityContainer{
+    position: relative;
+    width: 620px;
+    top: 50px;
+    height: 580px;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.dignityTitle{
+    text-align: center;
+    height: 70px;
+    font-size: 25px;
+    color: #FF4032;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+.dignityBodyText{
+    font-size: 14px;
+    position: relative;
+    width: 85%;
+    margin: auto;
+}
+
+.dignityBodyText *{
+    position: relative;
+    margin-bottom: 10px;
+    top: 0px;
+}
+
+.happinessBodyMid{
+    height: 680px;
+}
+
+.newsHomeBody{
+    height: 800px;
+}
+
+.newsPreviewsContainer{
+    top: 80px;
+    margin: auto;
+    position: relative;
+    width: 700px;
+}
+
+.newsPreview{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 110px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.newsPreviewDateContainer{
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border-radius: 3px;
+    top: 20px;
+    left: 24px;
+    font-size: 11px;
+    background-color: #F2f2f2;
+    text-align: center;
+}
+
+.newsPreviewDateContainer * {
+    position: relative;
+    top: 6px;
+}
+
+.newsPreviewTextContainer{
+    position: relative;
+    left: 45px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    top: 22px;
+}
+
+.newsPreviewTitle{
+    color: #FF4032;
+    font-size: 30px;
+}
+
+.newsPreviewDescription{
+    position: relative;
+    font-size: 11px;
+    top: 1px;
+    left: 3px;
+}
+
+.pressTextTitle{
+    font-size: 29px;
+    position: relative;
+    left: 20px;
+}
+
+.pressTextBody{
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+    font-size: 15px;
+    width: 310px;
+    left: 22px;
+}
+
+.pressTextBody * {
+    margin-bottom: 10px;
+}
+
+.newsBody{
+    height: 1000px;
+}
+
+.newsBodyContainer{
+    position: relative;
+    width: 700px;
+    margin: auto;
+    top: 60px;
+    height: 750px;
+    background-color: white;
+}
+
+.pressContainer{
+    width: 700px;
+    margin: auto;
+    top: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.newsBodyTitleContainer{
+    height: 100px;
+    position: relative;
+    width: 88%;
+    margin: auto;
+}
+
+.newsDateContainer{
+    position: relative;
+    height: 67px;
+    width: 67px;
+    border-radius: 3px;
+    top: 22px;
+    font-size: 11px;
+    background-color: #F2f2f2;
+    text-align: center;
+    left: 2px;
+}
+
+.newsDateContainer * {
+    position: relative;
+    top: 7px;
+}
+
+.newsTitle{
+    position: relative;
+    left: 85px;
+    font-size: 44px;
+    color: #FF4032;
+    width: 400px;
+    top: -38px;
+}
+
+.newsBodyText{
+    position: relative;
+    width: 86%;
+    top: 15px;
+    margin: auto;
+    font-size: 14px;
+    left: 0px;
+}
+
+.newsBodyText *{
+    margin-bottom: 10px;
+}
+
+.pressTextHelper{
+    position: relative;
+    top: 25px;
+    left: 50px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.pressTitle{
+    font-size: 15px;
+    color: #FF4032;
+}
+
+.pressEmail{
+    font-size: 12px;
+}
+
+body {
     margin: 0;
     padding: 0;
 }
 
-.searchbarHelper{
-    position: relative;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    left: 11%;
+a{
+    text-decoration: none;
 }
 
-.searchbarContainer{
-    width: 295px;
-    height: 23px;
-    background-color: white;
-    border: .8px solid #CCCCCC;
-    border-radius: 3px;
-    display: flex;
-    font-size: 10px;
-    vertical-align: middle;
-    line-height: 23px;
-    color: #CCCCCC;
-}
-
-.searchOption{
-    margin-left:2px;
-    margin-right: 2px;
+a:hover{
     text-decoration: underline;
 }
 
-.searchIcon{
+.headerLinks{
+    list-style-type: none;
+    width: 420px;
     position: relative;
-    width: 13px;
-    height: 13px;
-    top: 5px;
-    margin-right: 5px;
+    float: right;
+    top: 10px;
+    font-size: 16px;
 }
 
-#searchbarQuery{
+.headerLinks a {
+  font-size: 15px;
+}
+
+.headerLinks a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.testHeader{
+  height: 75px;
+  background-color: #FF4032;
+}
+
+.jobsConfirmationContainer{
+    top: 130px;
     position: relative;
-    width: 58px;
-    left: 8px;
-}
-
-.createEventButton{
-    position: relative;
-    width: 122px;
-    height: 25px;
-    border: .8px solid white;
-    border-radius: 3px;
-    color: white;
-    font-size: 13px;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.plusIcon{
-    position: relative;
-    width: 10px;
-    top: 1px;
-}
-
-.timeframeBlock{
-    height: 30px;
-    background-color: white;
-    border-bottom: 1px solid #CCCCCC;
-}
-
-.timeframeContainer{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    justify-content: space-around;
-    width: 380px;
-    align-items: center;
-    font-size: 12px;
-    color: #605E5B;
-    left: 10%;
-}
-
-.timeframeOption{
-    position: relative;
-    height: 30px;
-    vertical-align: middle;
-    line-height: 30px;
-}
-
-#timeframeExample{
-    height: 27px;
-    border-bottom: 3px solid #FF4032;
-}
-
-.searchResultsBackground{
-    position: relative;
-    height: 600px;
-}
-
-.vertDivider{
-    position: relative;
-    height: 100%;
-    width: 1px;
-    background-color: grey;
-}
-
-.searchResultsBodyContainer{
-    position: relative;
-    height: 100%;
-    width: 700px;
-    margin: auto;
-    display: flex;
-}
-
-#searchResultsBodyLeft{
-    width: 150px;
-    margin-right: 0px;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-}
-
-#searchResultsBodyRight{
-    position: relative;
-    left: 20px;
-    width: 520px;
-    margin-left: 0px;
-}
-
-#topfiller{
-    position: relative;
-    height: 10px;
-}
-
-#filterResultsTitle{
-    position: relative;
-    width: 100px;
-    height: 25px;
-    left: 5px;
-}
-
-.resultsOptionsBox{
-    position: relative;
-    height: 80px;
-}
-
-.resultsOptionsTitle{
-    position: relative;
-    font-size: 10px;
-    color: #363636;
-    left: 6px;
-}
-
-.resultsOptionsChoices{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    font-size: 9px;
-    color: #605E5B;
-    top: 3px;
-}
-
-.resultsCheckboxContainer{
-    align-items: center;
-    display: flex;
-    margin-bottom: 2px;
-}
-
-#moreOptionsBox{
-    position: relative;
-    top: 2px;
-    left: 5px;
-    color: #0066FF;
-}
-
-#moreOptionPlus{
-    width: 10px;
-    margin-right: 3px;
-}
-
-.resultsCategoriesContainer{
-    position: relative;
-    width: 120px;
-}
-
-.categoryPic{
-    width: 10px;
-    position: relative;
-    top: 1px;
-    margin-right: 2px;
-}
-
-#cCausesC{
-    display: none;
-}
-
-#cCausesU{
-    display:inline-block;
-}
-
-.categoryCheck{
-    top: 5px;
-    left: 7px;
-    height: 18px;
-}
-
-.searchResultsTitle{
-    position: relative;
-    top: 5px;
-    font-size: 28px;
-    color: #605E5B;
-    height: 50px;
-}
-
-.searchResultsContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.searchResultContainer{
-    position: relative;
-    height: 110px;
-    margin-bottom: 15px;
-    background-color: white;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.resultPreview{
-    position: relative;
-    left: 20px;
-
-    width: 73px;
-    height: 73px;
-}
-
-.resultDateInformation{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
-    position: relative;
-    right: 33px;
-}
-
-.resultDateDay{
-    position: relative;
-    color: #FF4032;
-    top: 2px;
-}
-
-.resultDateMonth{
-    position: relative;
-    color: #FF4032;
-    bottom: 2px;
-}
-
-.resultTextContainer{
-    width: 245px;
-    position: relative;
-    top: -3px;
-}
-
-.resultTitleContainer{
-    display: flex;
-    flex-direction: row;
     width: 400px;
-}
-
-.resultTitleContainer *{
-    margin-right: 4px;
-    font-size: 11px;
-}
-
-.resultTitle{
-    position: relative;
-    color: #666666;
-    font-size: 14px;
-    top: -2px;
-}
-
-.resultHost{
-    color: #0066FF;
-}
-
-.resultInformation{
-    position: relative;
-
-    color:#605E5B;
-    font-size: 10px;
-}
-
-.resultButtonContainer{
-    position: relative;
-    display: flex;
-    top: 35px;
-    height: 40px;
-}
-
-.resultGoingButton{
-    position: relative;
-    width: 76px;
-    height: 21px;
-    border: .8px solid rgba(255,64,50, 0.8);
+    margin: auto;
+    background-color: #FFFFFF;
     border-radius: 3px;
-    color: rgba(255,64,50, 0.8);
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    margin-right: 7px;
-    padding-top: 1px;
-}
-
-.resultGoingIcon{
-    position: relative;
-    width: 12px;
-    height: 12px;
-    top: 6px;
-    left: 5px;
-}
-
-.resultShareButton{
-    position: relative;
-    width: 68px;
-    height: 22px;
-    border: .8px solid #999999;
-    border-radius: 3px;
-    color: #999999;
-    font-size: 13px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.resultShareIcon{
-    height: 13px;
-    position: relative;
-    top: 1px;
-    right: 2px;
-}
-
-.categoryPictureBlock{
-    height: 320px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-#categoryArtBlock{
-  background-image: url('https://i.imgur.com/XBtZxYI.png');
-}
-
-
-.categoryTitleContainer{
-    position: relative;
-    top: 100px;
-    font-size: 32px;
-    color: white;
-}
-
-.categoryAdsBlock{
-    height: 1150px;
-    width: 660px;
-    margin: auto;
-}
-
-.categoryAdsTitle{
-    position: relative;
-    height: 120px;
-    font-size: 41px;
-    color: #363636;
-    top: 50px;
-}
-
-.categoryAdsContainer{
-    height: 980px;
-}
-
-.adTextContainer{
-    position: relative;
-    top: 5%;
-    left: 5%;
-    color: white;
-}
-
-.adTextTitle{
-    font-size: 19px;
-}
-
-.adTextDate{
-    font-size: 15px;
-}
-
-.adsHoriBlock{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-}
-
-.adsVertBlock3{
-    display: flex;
-    flex-direction: column;
-    width: 240px;
-}
-
-.smallerAds{
-    width: 170px;
-}
-
-.adsVertBlock4{
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-}
-
-.ad{
-    border-radius: 5px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-.tallAdBig{
-    height: 530px;
-    background-image: url('https://i.imgur.com/rk5c6WE.png');
-}
-
-.tallAdMed{
-    height: 200px;
-    margin-bottom: 15px;
-    background-image: url('https://i.imgur.com/VjgH5CE.png');
-}
-
-.tallAdSmall{
-    height: 200px;
-    background-image: url('http://i65.tinypic.com/v6sz7c.png');
-}
-
-.wideAdMed{
-    width: 380px;
-    height: 100px;
-    background-image:url('http://i65.tinypic.com/v6sz7c.png');
-}
-
-.wideAdBig{
-    width: 100%;
-    height: 220px;
-    background-image: url('https://i.imgur.com/bjV667V.jpg');
-}
-
-.categoryBotBlock{
-    background-color: #FF4032;
-    height: 90px;
-}
-
-.catBotButton{
-    position: relative;
-    width: 320px;
-    height: 30px;
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: white;
-    font-size: 14px;
-    vertical-align: middle;
-    line-height: 30px;
-    border-radius: 3px;
-    color: white;
-    margin: auto;
-    text-align: center;
-    top: 30px;
-}
-
-.whiteBlockSmall{
-    position: relative;
-    background-color: white;
-    height: 90px;
-}
-
-.whiteBlockMed{
-    position: relative;
-    background-color: white;
-    height: 110px;
-}
-
-.homeHeader{
-    height: 65px;
-    background-color: white;
-}
-
-#headerLogo{
-    position:relative;
-    display: block;
-    height: 55px;
-    margin: auto;
-    top: 0px;
-}
-
-.signButtonsContainer{
-    position: relative;
-    display: flex;
-    width: 175px;
-    height: 50px;
-    float: right;
-    top: -23px;
-    flex-direction: row;
-    justify-content: space-between;
-    right: 18px;
-}
-
-.signButton{
-    position: relative;
-    height: 23px;
-    width: 80px;
-    border-radius: 3px;
-    text-align: center;
-    padding-top: 5px;
-    background-color: transparent;
-}
-
-.logIn{
-    top: 2px;
-    border-style: none;
-}
-
-.signUp{
-    border-style: solid;
-    border-color: #FF0032;
-    border-width: 1px;
-    color: #FF4032;
-    height: 29px;
-}
-
-.homeSearchBody{
-    height: 380px;
-    background-image: url('https://i.imgur.com/8f4RtcO.jpg');
-}
-
-#hashtagText{
-    position: relative;
-    top: 100px;
-    width: 380px;
-    margin: auto;
-
-
-    font-size: 54px;
-    color: #FF4032;
-}
-
-#searchButtonContainer{
-    position: relative;
-    width: 340px;
-    height: 50px;
-    top: 120px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-}
-
-.flexContainer{
-    position: relative;
-    width: 100%;
-    align-content: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#searchButtonContainerTrue{
-    position: relative;
-    width: 480px;
-    height: 40px;
-    top: 120px;
-    margin: auto;
-}
-
-.searchButton{
-    color: white;
-    text-align: center;
-    width: 80px;
-    height: 35px;
-    border-radius: 3px;
-    border-style: solid;
-    border-color: red;
-    background-color: red;
-    vertical-align: middle;
-    line-height: 33px;
-    font-size: 17px;
-}
-
-.discoverButton{
-    color: #FF4032;
-    text-align: center;
-    width: 240px;
-    height: 33px;
-    border-radius: 3px;
-    background-color: rgba(255,255,255,.7);
-    border-style: solid;
-    border-color: #FF4032;
-    border-width: 1px;
-    vertical-align: middle;
-    line-height: 34px;
-    font-size: 15px;
-}
-
-.featuredText{
-    position: relative;
-    top: 67px;
-    color: #FF4032;
-    font-size: 35px;
-    width: 130px;
-    left: 32px;
-}
-
-.featuredBlock{
-    height: 200px;
-    background-color: #F2F2F2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.buttonContainer{
-    position: relative;
-    height: 60px;
-    width: 60px;
-    margin: auto;
-}
-
-#leftButton{
-    background-image: url('https://i.imgur.com/4I8mdsq.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 1px;
-}
-
-#rightButton{
-    background-image: url('https://i.imgur.com/jQwai5T.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.previewContainer{
-    position: relative;
+    border: 1px solid #CCCCCC;
     height: 180px;
-    width: 880px;
+}
+
+.jobsConfirmationTexts{
+    position: relative;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    top: 5px;
-}
-
-.previewBlock{
-    position: relative;
-    height: 170px;
-    width: 202px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.previewImage{
-    position: relative;
-    height: 69%;
-    background-image: url('https://i.imgur.com/3NGr5w5.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-}
-
-.previewInfo{
-    position: relative;
-    height: 30%;
-    display: flex;
-    flex-direction: row;
-}
-
-.previewText{
-    position: relative;
-    width: 70%;
-    top: 3px;
-}
-
-.previewDateBox{
-    position: relative;
-    width: 30%;
-    top: 5px;
-}
-
-.previewTitle{
-    position: relative;
-    font-size: 15px;
-    color: #FF4032;
-    left: 5px;
-    font-family: "Open Sans Semibold", sans-serif;
-}
-
-.previewSub{
-    position: relative;
     font-size: 12px;
-    color: #434343;
-    left: 6px;
-    font-size: 11px;
+    width: 88%;
+    color: #333333;
+    top: 20px;
 }
 
-.previewDate{
+.jobsConfirmationTexts * {
+  margin-bottom: 5px;
+}
+
+#confirmationTitle{
+    margin-bottom: 10px;
+}
+
+.jobsConfirmationBtn{
     position: relative;
-    text-align: center;
-    top: 6px;
-}
-
-.dateMonth{
-    color: #FF4032;
-    font-size: 13px;
-}
-
-.dateDay{
-    font-size: 15px;
-}
-
-.redBlock{
-    height: 200px;
+    left: 330px;
     background-color: #FF4032;
-    text-align: center;
-}
-
-.blockText{
-    top: 60px;
-    position: relative;
     color: white;
-    font-size: 22px;
-}
-
-.blockSign{
-    position: relative;
-    top: 80px;
-
-
+    top: 38px;
+    border-radius: 4px;
     border-style: solid;
     border-width: 1px;
-    border-color: white;
-    color: white;
-    margin: auto;
-}
-
-.findSomethingBlock{
-    height: 350px;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: row;
-}
-
-#imageHelper{
-    position: relative;
-    margin: auto;
-    top: 50px;
-    left: 120px;
-    width: 160px;
-    height: 160px;
-
-    background-image: url('https://i.imgur.com/KMXziVM.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.divider25{
-    position: relative;
-    height: 100%;
-    width: 25%;
-}
-
-.divider35{
-    position: relative;
-    height: 100%;
-    width: 35%;
-}
-
-.divider36{
-    position: relative;
-    height: 100%;
-    width: 36%;
-}
-
-
-.divider40{
-    position: relative;
-    height: 100%;
-    width: 40%;
-}
-
-.divider50{
-    position: relative;
-    height: 100%;
-    width: 50%;
-}
-
-.divider60{
-    position: relative;
-    height: 100%;
-    width: 60%;
-}
-
-#findPosHelp{
-    position: relative;
-    top: 50px;
-    left: 170px;
-    width: 400px
-}
-
-#findTitle{
-    color: #FF4032;
-    font-family: "Open Sans Semibold", sans-serif;
-    font-size: 32px;
-}
-
-#findText{
-    position: relative;
-    color: #434343;
-    width: 100%;
-    font-size: 13px;
-    top: 8px;
-}
-
-#findButton{
-    position: relative;
-    top: 30px;
-    width: 240px;
-    border-radius: 5px;
-    background-color: #FF4032;
-    height: 36px;
-    color: white;
+    height: 28px;
+    width: 55px;
+    font-size: 12px;
     text-align: center;
-    font-size: 17px;
-    vertical-align: middle;
-    line-height: 37px;
 }
 
-.createEventBlock{
-    background-color: #FF4032;
-    height: 150px;
-    vertical-align: middle;
-    line-height: 150px;
-    display: flex;
-    flex-direction: row;
-}
-
-#createButton{
-    position: relative;
-    display: block;
-    top: 45px;
-    right: 10px;
-    height: 65px;
-    float: right;
-}
-
-#createText{
-    position: relative;
-    font-size: 47px;
-    color: white;
-    width: 350px;
-}
-
-#discover{
-    position: relative;
+.errorMessage{
+  position: absolute;
     color: #FF4032;
+    width: 210px;
+    font-size: 12px;
     margin: auto;
-    text-align: center;
-    // font-family: "Segoe UI Semibold";
-    font-size: 64px;
-    top: 5px;
-}
-
-.categoriesBlock{
-    height: 360px;
-}
-
-.categoriesRow{
-    position: relative;
-    width: 100%;
-    height: 33%;
-    display: flex;
-    flex-direction: row;
-}
-
-.categoriesTile{
-    position: relative;
-    width: 20%;
-}
-
-.categoryImage{
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.mobileBlock{
-    background-color: #FF4032;
-    height: 300px;
-    display: flex;
-    flex-direction: row;
-}
-
-#comingSoon{
-    position: relative;
-    width: 300px;
-    top: 60px;
-    margin: auto;
-    left: 50px;
-
-    color: white;
-    font-size: 32px;
-}
-
-#comingSub{
-    position: relative;
-    width: 300px;
-    top: 70px;
-    margin: auto;
-    left: 50px;
-
-    font-size: 14px;
-    color: #f2f2f2;
-}
-
-.picContainer{
-    height: 90%;
-    top: 10%;
-    margin: auto;
-    position: relative;
-    background-image: url('https://i.imgur.com/PvolGra.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 380px;
+    left: 195px;
+    bottom: 4px;
 }

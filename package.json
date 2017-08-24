@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "Our project is called \"lyfeontrack\" and is intended to help users track the metrics of their day-to-day overall well-being.  Our webapp will prompt users with bi-daily questionaries,  where they can record information about their food, sleep, exercise and/or mental health state for the day. As this information is recorded over time, Lyfeontrack will chart the metrics of each day, which the user can then use to explore how their habits change over time.  Ultimately, we hope this app can be used to gain a deeper understanding of one's habits, and how one can try to change them to lead a better life.",
+  "description": "Company site for Halendr Ltd.",
   "main": "src/index.js",
   "scripts": {
     "test": "eslint src",
@@ -9,7 +9,7 @@
     "build": "SET WEBPACK_ENV=production & webpack --colors",
     "clean": "rimraf ./build",
     "deploy": "npm run build & gh-pages -d . & npm run clean",
-    "surge": "npm run build & surge -p public -d halendrtesting.surge.sh & npm run clean"
+    "surge": "npm run build & surge -p public -d halendrcompany.surge.sh & npm run clean"
   },
   "repository": {
     "type": "git",
@@ -46,9 +46,11 @@
   "dependencies": {
     "autoprefixer": "^6.7.7",
     "axios": "^0.16.1",
+    "email-validator": "^1.1.1",
     "highcharts": "^5.0.11",
     "jquery": "^3.2.1",
     "lodash.debounce": "^4.0.8",
+    "material-ui": "^0.18.7",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
