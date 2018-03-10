@@ -1,255 +1,1147 @@
+
+* {
+   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+input[type='radio'] {
+    -webkit-appearance:none;
+    width:10px;
+    height:10px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+}
+
+input[type='radio']:hover {
+    box-shadow:0.5px 0.5px 1px 0px grey inset;
+}
+
+input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;
+    border-radius:50%;
+}
+
+input[type='radio']:checked:before {
+    box-shadow:0 0 5px 0px grey inset;
+    background-color: #363636;
+}
+
+
 body {
-  font-family: "Roboto", sans-serif;
-  background: darken(white, 0.2);
-  padding: 0;
-  margin: 0;
-  background-color: rgb(229, 230, 232);
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }
 
-#metrics {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Khula', sans-serif;
-  color: #4F4F4F;
-
+.contentBlock{
+    width: 100%;
+    position: relative;
 }
 
-.active {
-  color: white;
-  text-decoration: none;
+.flexBlock{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-h2{
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 2em;
-}
-#chart{
-  display: flex;
-  width: 800px;
-  height: 500px;
+.homeHeader{
+    height: 65px;
+    background-color: white;
 }
 
-.navBar{
-  position: relative;
-  top: 0px;
-  width: 100%;
-  height: 60px;
-  background-color: #829C9F;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
+#headerLogo{
+    position:relative;
+    display: block;
+    height: 55px;
+    margin: auto;
+    top: 0px;
 }
 
-.pageHeading{
-  display: flex;
-  justify-content: center;
-  font-family: 'Oswald', sans-serif;
-  color: #4F4F4F;
-  font-weight: 200;
-  font-size: 60px;
-  margin: 50px;
+.centerText{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 33px;
 }
 
-.pageSubtitle{
-  font-family: 'Work Sans', sans-serif;
-  display: flex;
-  justify-content: center;
-  color: grey;
+.headerLogoBox{
+    position: relative;
+    height: 48px;
+    width: 130px;
+    top: 10px;
+    background-image: url("https://i.imgur.com/RwwncKh.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
 }
 
-#form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.signButtonsContainer{
+    position: relative;
+    display: flex;
+    width: 175px;
+    height: 30px;
+    float: right;
+    top: -23px;
+    flex-direction: row;
+    justify-content: space-between;
+    right: 18px;
 }
 
-.pageBody{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 50px;
+.signButton{
+    position: relative;
+    height: 24px;
+    width: 80px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 4px;
+    font-size: 15px;
 }
 
-.pageBodyText{
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+.logIn{
+    top: 2px;
 }
 
-.main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  align-content: center;
-}
-
-.homeLink{
-  position: relative;
-  left: 20px;
-}
-
-#navLinks{
-  position: relative;
-  right: 50px;
-}
-
-.ButtonLink{
-  font-family:'Work Sans', sans-serif;
-  background-color: #829C9F; /* Green */
-  border: none;
-  color: #4F4F4F;
-  box-shadow: 1px, 1px, 1px, black;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 2px;
-  font-size: 18px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.ButtonLink:hover{
-  background-color: white;
-  color: rgb(51, 102, 153);
-}
-
-#surveyButton{
-  position: relative;
-  border-color: #829C9F;
-  border-style: solid;
-  border-radius: 1px;
-  right: 5px;
-}
-
-#surveyButton:hover{
-  background-color: white;
-  border-color: #829C9F;
-  border-style: solid;
-  border-radius: 1px;
-  color: rgb(51, 102, 153);
-}
-
-.survey{
-  position: relative;
-  display: block;
-  margin: auto;
-}
-
-.surveyQ{
-  position: relative;
-  background-color: white;
-  border-style: solid;
-  border-color: #8c8b8b;
-  border-radius: 1px;
-  width: 665px;
-  height: 1250px;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-left: 10px;
-  margin-bottom: 30px;
-}
-
-.question_heading{
-  position: relative;
-  left: 20px;
-}
-
-.surveyButton{
-  position: relative;
-  box-shadow: 1px 1px 1px black;
-  top: 20px;
-  display: block;
-  margin: auto;
-  width: 180px;
-  height: 60px;
-  font-size: 20px;
-  background-color:rgb(51, 102, 153); /* Green */
-  border: none;
-  color: white;
-  margin-bottom: 50px;
-}
-
-.surveyButton:hover{
-  background-color: white;
-  color: rgb(51, 102, 153);
-}
-
-.answers{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.chartContainer{
-  position: relative;
-  margin: auto;
+.signUp{
+    border-style: solid;
+    border-color: #FF0032;
+    border-width: 1px;
+    color: #FF4032;
 }
 
 .divider{
-  height: 0;
-  width: 450px;
-  border-bottom: solid;
-  border-color: rgba(0,0,0, .2);
-  border-radius: 1vh;
-  position: relative;
-  left: 75px;
+    position: relative;
+    width: 89%;
+    height: 1px;
+    background-color: grey;
+    margin: auto;
 }
 
-.answerSection{
-  position: relative;
-  width: 500px;
-  height: 35px;
-  left:40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  align-items: center;
+.searchInput{
+    border-radius: 5px 0px 0px 5px;
+    border-style: none;
+    height: 30px;
+    width: 150px;
+    padding: none;
+    background-color: white;
+    padding-left: 10px;
 }
 
-.welcomeContainer{
-  position: relative;
-  height: 1000px;
-  margin: 0;
+.searchClick{
+    width: 30px;
+    background-color: white;
+    background-image: url('https://i.imgur.com/gOZKbJe.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 5px;
 }
 
-.formButtons{
-  background-color:rgb(103, 140, 137);
-  border: 2px solid rgb(103, 140, 137);
+.searchVariables{
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    height: 32px;
+    font-size: 12px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 32px;
+    border-left: 1px solid grey;
+    color: #666666;
+}
+
+.searchVariables *{
+    margin-left: 4px;
+    margin-right: 0px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.eventBackground{
+    position: relative;
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.columnSection{
+    position: relative;
+    height: 100%;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.eventBodyLeft{
+    width: 570px;
+}
+
+.eventBodyRight{
+    top: 3px;
+    width: 250px;
+}
+
+.eventBlock{
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.eventPhoto{
+    height: 260px;
+    background-color: white;
+    margin-bottom: 0px;
+    background-image: url('https://i.imgur.com/c0V96lN.jpg');
+    background-size: 570px 320px;
+    background-repeat: no-repeat;
+}
+
+
+.starIcon{
+    height: 20px;
+}
+
+.eventTitleTop{
+    position: relative;
+    width: 97%;
+    height: 85px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.eventTitleBlock{
+    height: 150px;
+}
+
+.eventTitleInfo{
+    top: 15px;
+    left: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 270px
+}
+
+.eventTitle{
+    font-size: 30px;
+    color: #323232;
+}
+
+.eventSubTitle{
+    font-size: 14px;
+    display: flex;
+}
+
+.eventSubTitle *{
+    margin-right: 4px;
+    color: gray;
+}
+
+.eventHostName{
+    color: #FF4032;
+}
+
+.eventDate{
+    position: relative;
+    width: 55px;
+    height: 58px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 3px;
+    border-width: 0.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    color: #FF4032;
+    align-items: center;
+    top: 15px;
+}
+
+#eventDateDay{
+    position: relative;
+    top: 2px;
+}
+
+#eventDateNumber{
+    font-size: 16px;
+    color: black;
+}
+
+#eventDateMonth{
+    position: relative;
+    top: -1px;
+}
+
+#eventReviewsBtnContainer{
+    position: relative;
+    left: 115px;
+    top: 8px;
+}
+
+.reviewsButton{
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 33px;
+    text-align: center;
+}
+
+.eventTitleBottom{
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-around;
+}
+
+.eventBottomContainer{
+    position: relative;
+    display: flex;
+    height: 24px;
+    width: 94%;
+    margin: auto;
+    top: 5px;
+}
+
+.eventBottomContainer *{
+    margin-right: 4px;
+}
+
+.textDot{
+    font-size:32px;
+    position: relative;
+    top: -10px;
+}
+
+.Icon{
+    height: 16px;
+    width: 16px;
+    background-size: contain;
+    margin-right: 8px;
+    position: relative;
+    top: -2px;
+}
+
+#timeIcon{
+    background-image: url('https://i.imgur.com/se3vrDT.png');
+}
+
+#locationIcon{
+    background-image: url('https://i.imgur.com/xhq0rsK.png');
+}
+
+#checkIcon{
+    background-image: url('https://i.imgur.com/Jc18qA7.png');
+    position: relative;
+    left: 20px;
+}
+
+.clashText{
+    color: forestgreen;
+    font-size: 12px;
+
+    position: relative;
+    left: 20px;
+}
+
+.eventBottomText{
+    position: relative;
+    font-size: 14px;
+    bottom: 2px;
+    color: dimgray;
+}
+
+.showMapText{
+    font-size: 13px;
+    color: #FF4032;
+    position: relative;
+    top: -2px;
+}
+
+.eventButtonsBlock{
+    height: 60px;
+    background-color: white;
+}
+
+.eventMiscButton{
+    position: relative;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    width: 86px;
+    background-color: #FF4032;
+    border-width: 0px;
+    border-radius: 3px;
+    padding-top: 2px;
+    color: white;
+    margin-right: 6px;
+    left: 20px;
+    top: 11px;
+    font-size: 15px;
+}
+
+.buttonContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-content: center;
+}
+
+#eventShareButton{
+    position: relative;
+    top: 13px;
+}
+
+.goingIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/lfF123n.png');
+    width: 13px;
+    height: 13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 2px;
+    left: 5px;
+}
+
+.shareIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/1lBYkW6.png');
+    width: 14px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 1px;
+    right: 2px;
+}
+
+.moreIcon{
+    position: relative;
+    background-image: url('https://i.imgur.com/DN1W9Tm.png');
+    width: 18px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dotIcon{
+    height: 13px;
+    width: 16px;
+}
+
+
+#eventDetailTitle{
+    position: relative;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 45px;
+    padding-left: 32px;
+    font-size: 18px;
+}
+
+.eventBodyText{
+    position: relative;
+    width: 88%;
+    margin: auto;
+    top: 12px;
+    font-size: 15px;
+}
+
+.eventDetailsBlock{
+    height: 260px;
+}
+
+.eventDiscussionBlock{
+    height: 310px;
+}
+
+.discussionContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.discussionComment{
+    position: relative;
+    margin: auto;
+    width: 88%;
+    height: 85px;
+    display: flex;
+}
+
+.discussionTextContainer{
+    position: relative;
+    left: 10px;
+    width: 88%;
+    top: 15px;
+}
+
+.discussionCommentAuthor{
+    font-size: 14px;
+    color: #FF4032;
+}
+
+.discussionCommentText{
+    font-size: 13px;
+}
+
+.userPortrait{
+    position: relative;
+    height: 55px;
+    top: 15px;
+}
+
+.rightSmallBlock{
+    height: 110px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.homeBody{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+
+.adsHeader{
+    height: 75px;
+    background-color: #FF4032;
+}
+
+.headerLink{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 13px;
+}
+
+.headerLogo{
+    height: 50px;
+    position: relative;
+    top: 11px;
+    left: 70px;
+}
+
+.aboutBody{
+    background-color: #FF4032;
+    height: 700px;
+}
+
+.bodyContainer{
+    position: relative;
+    width: 88%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    top: 70px;
+}
+
+.colFlex{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.missionStatementContainer{
+    width: 440px;
+}
+
+.contactInfoContainer{
+
+    position: relative;
+    top: 45px;
+    width: 190px;
+}
+
+.statementLogo{
+    position: relative;
+    height: 55px;
+    width: 150px;
+    left: 10px;
+}
+
+.missionStatementText{
+    top: 15px;
+    position: relative;
+    color: white;
+    font-size: 14px;
+}
+
+.missionStatementText *{
+   position: relative;
+   left: 16px;
+   margin-bottom: 10px;
+}
+
+.contactContainer{
+    margin-bottom: 15px;
+}
+
+.contactTitle{
+    color: #333333;
+    font-size: 18px;
+}
+
+.contactInfo{
+    position: relative;
+    left: 1px;
+    bottom: 1px;
+    color: white;
+    font-size: 14px;
+}
+
+.footerBlock{
+    height: 60px;
+    background-color: #323232;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footerLinks{
+    vertical-align: middle;
+    position: relative;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-around;
+    left: 30px;
+    font-size: 14px;
+}
+
+.footerLink{
+    color: white;
+}
+
+.footerCopy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 14px;
+    right: 10px;
+}
+
+.languageMenu{
+    color: white;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.copyrightText{
+    color: white;
+    vertical-align: middle;
+    line-height: 60px;
+    font-size: 14px;
+}
+
+.languageContainer{
+    width: 130px;
+    background-color: transparent;
+    color: white;
+    border-color: #605E5B;
+    height: 25px;
+    position: relative;
+    font-size: 14px;
+}
+
+.investorBody{
+    background-color: #FF4032;
+    height: 700px;
+}
+
+.investorTextContainer{
+    position: relative;
+    width: 330px;
+
+    top: 90px;
+    left: 100px;
+}
+
+.investorTextTitle{
+    font-size: 28px;
+    color: #3b3b3b;
+}
+
+.investorTextBody{
+    position: relative;
+    color: white;
+    font-size: 14px;
+    top: 20px;
+    left: 2px;
+}
+
+.investorTextBody *{
+    margin-bottom: 10px;
+}
+
+.divider25{
+    position: relative;
+    height: 100%;
+    width: 25%;
+}
+
+.divider45{
+    position: relative;
+    height: 100%;
+    width: 45%;
+}
+
+
+.jobsBodyTop{
+    height: 340px;
+    background-color: #FF4032;
+}
+
+.jobsBodyMid{
+    height: 470px;
+}
+
+.jobsBodyBot{
+    height: 190px;
+    background-color: white;
+}
+
+.jobsBodyTopContainer{
+    top: 85px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 840px;
+}
+
+#jobsBodyTopTitle{
+    color: white;
+    font-size: 34px;
+}
+
+.jobsBodyTopButtonHelper{
+    top: 25px;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.happinessBodyTopText{
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    top: -7px;
+}
+
+.jobsBodyTopText{
+    font-size: 13px;
+    text-align: center;
+}
+
+.browseJobsButton{
+    top: 12px;
+    position: relative;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    border-radius: 4px;
+    height: 28px;
+    width: 90px;
+    font-size: 13px;
+}
+
+.browseProjectsButton{
+    top: 10px;
+    position: relative;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    border-radius: 4px;
+    height: 28px;
+    width: 100px;
+    font-size: 13px;
+}
+
+.jobsBodyMidContainer{
+    top: 180px;
+    position: relative;
+    width: 650px;
+    margin: auto;
+    height: 110px;
+    justify-content: center;
+}
+
+.jobsMidText{
+    text-align: center;
+    font-size: 14px;
+}
+
+.jobsButtonContainer{
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.jobInterestInput{
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    border-width: 1px;
+    margin: 0;
+    width: 210px;
+    position: relative;
+    left: 2px;
+    color: #999999;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.jobInterestButton{
+    background-color: #FF4032;
+    position: relative;;
+    top: -1px;
+    height: 35px;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px 5px 5px 0px;
+    margin: 0;
+    font-size: 13px;
+    width: 60px;
+}
+
+.jobsBotContainer{
+    top: 30px;
+    font-size: 14px;
+    position: relative;
+    width: 82%;
+    margin: auto;
+    color: #666666;
+}
+
+.jobsBotContainer *{
+    margin-bottom: 10px;
+}
+
+.dignityContainer{
+    position: relative;
+    width: 620px;
+    top: 50px;
+    height: 580px;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.dignityTitle{
+    text-align: center;
+    height: 70px;
+    font-size: 25px;
+    color: #FF4032;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+.dignityBodyText{
+    font-size: 14px;
+    position: relative;
+    width: 85%;
+    margin: auto;
+}
+
+.dignityBodyText *{
+    position: relative;
+    margin-bottom: 10px;
+    top: 0px;
+}
+
+.happinessBodyMid{
+    height: 680px;
+}
+
+.newsHomeBody{
+    height: 800px;
+}
+
+.newsPreviewsContainer{
+    top: 80px;
+    margin: auto;
+    position: relative;
+    width: 700px;
+}
+
+.newsPreview{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 110px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.newsPreviewDateContainer{
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border-radius: 3px;
+    top: 20px;
+    left: 24px;
+    font-size: 11px;
+    background-color: #F2f2f2;
+    text-align: center;
+}
+
+.newsPreviewDateContainer * {
+    position: relative;
+    top: 6px;
+}
+
+.newsPreviewTextContainer{
+    position: relative;
+    left: 45px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    top: 22px;
+}
+
+.newsPreviewTitle{
+    color: #FF4032;
+    font-size: 30px;
+}
+
+.newsPreviewDescription{
+    position: relative;
+    font-size: 11px;
+    top: 1px;
+    left: 3px;
+}
+
+.pressTextTitle{
+    font-size: 29px;
+    position: relative;
+    left: 20px;
+}
+
+.pressTextBody{
+    position: relative;
+    top: 20px;
+    color: #ffffff;
+    font-size: 15px;
+    width: 310px;
+    left: 22px;
+}
+
+.pressTextBody * {
+    margin-bottom: 10px;
+}
+
+.newsBody{
+    height: 1000px;
+}
+
+.newsBodyContainer{
+    position: relative;
+    width: 700px;
+    margin: auto;
+    top: 60px;
+    height: 750px;
+    background-color: white;
+}
+
+.pressContainer{
+    width: 700px;
+    margin: auto;
+    top: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.newsBodyTitleContainer{
+    height: 100px;
+    position: relative;
+    width: 88%;
+    margin: auto;
+}
+
+.newsDateContainer{
+    position: relative;
+    height: 67px;
+    width: 67px;
+    border-radius: 3px;
+    top: 22px;
+    font-size: 11px;
+    background-color: #F2f2f2;
+    text-align: center;
+    left: 2px;
+}
+
+.newsDateContainer * {
+    position: relative;
+    top: 7px;
+}
+
+.newsTitle{
+    position: relative;
+    left: 85px;
+    font-size: 44px;
+    color: #FF4032;
+    width: 400px;
+    top: -38px;
+}
+
+.newsBodyText{
+    position: relative;
+    width: 86%;
+    top: 15px;
+    margin: auto;
+    font-size: 14px;
+    left: 0px;
+}
+
+.newsBodyText *{
+    margin-bottom: 10px;
+}
+
+.pressTextHelper{
+    position: relative;
+    top: 25px;
+    left: 50px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.pressTitle{
+    font-size: 15px;
+    color: #FF4032;
+}
+
+.pressEmail{
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.headerLinks{
+    list-style-type: none;
+    width: 420px;
+    position: relative;
+    float: right;
+    top: 10px;
+    font-size: 16px;
+}
+
+.headerLinks a {
+  font-size: 15px;
+}
+
+.headerLinks a:hover{
   color: white;
-  padding: 10px 25px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-  font-size: 24px;
-  border-radius: 6px;
-  outline: none;
-  /* adapted from https://www.w3schools.com/css/css3_buttons.asp */
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
-  margin: 20px;
+  text-decoration: none;
 }
 
-#ftitle{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-  color: rgb(129, 156, 152);
-  font-size: 30px;
+.testHeader{
+  height: 75px;
+  background-color: #FF4032;
 }
 
-#field{
-  font-size: 30px;
-  border-radius: 4px;
-  padding: 5px;
-  margin: 10px;
+.jobsConfirmationContainer{
+    top: 130px;
+    position: relative;
+    width: 400px;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    height: 180px;
+}
+
+.jobsConfirmationTexts{
+    position: relative;
+    margin: auto;
+    font-size: 12px;
+    width: 88%;
+    color: #333333;
+    top: 20px;
+}
+
+.jobsConfirmationTexts * {
+  margin-bottom: 5px;
+}
+
+#confirmationTitle{
+    margin-bottom: 10px;
+}
+
+.jobsConfirmationBtn{
+    position: relative;
+    left: 330px;
+    background-color: #FF4032;
+    color: white;
+    top: 38px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    height: 28px;
+    width: 55px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.errorMessage{
+  position: absolute;
+    color: #FF4032;
+    width: 210px;
+    font-size: 12px;
+    margin: auto;
+    left: 195px;
+    bottom: 4px;
 }

@@ -1,107 +1,19 @@
-
 // keys for actiontypes
 import axios from 'axios';
 
-const ROOT_URL = 'https://cs52lyfetrackr.herokuapp.com/api';
-// const ROOT_URL = 'http://localhost:9090/api';
-const API_KEY = '';
-
+// export const ROOT_URL = 'https://halendr-api.herokuapp.com/api';
+export const ROOT_URL = 'http://localhost:9090/api/candidates';
 
 // keys for actiontypes
 export const ActionTypes = {
   FETCH_QUESTIONS: 'FETCH_QUESTIONS',
-  FETCH_METRICS: 'FETCH_METRICS',
-  // AUTH_USER: 'AUTH_USER',
-  // DEAUTH_USER: 'DEAUTH_USER',
-  AUTH_ERROR: 'AUTH_ERROR',
 };
 
-export function authError(error) {
-  return {
-    type: ActionTypes.AUTH_ERROR,
-    message: error,
-  };
-}
-
-export function signupUser(user, history) {
-  console.log(user);
+export function sendEmail(email) {
+  console.log('got em');
   return (dispatch) => {
-    console.log('Trying to signup');
-    console.log(`${ROOT_URL}`);
-    axios.post(`${ROOT_URL}/signup`, user).then((response) => {
-      console.log('signed up!!');
-      history.push('/');
-    }).catch((error) => {
-      console.log('User is hereeeeeee!');
-      console.log(error);
-    });
-  };
-}
-
-export function signinUser({ email, password }, history) {
-  return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin`, { email, password })
-    .then((response) => {
-      dispatch({ type: ActionTypes.AUTH_USER });
-      localStorage.setItem('token', response.data.token);
-      history.push('/');
-    })
-    .catch((error) => {
-      dispatch(authError(error));
-    });
-  };
-}
-
-export function fetchQuestions() {
-  return (dispatch) => {
-    axios.get(`${ROOT_URL}/questions${API_KEY}`).then((response) => {
-      console.log(response.data);
-      return dispatch({ type: 'FETCH_QUESTIONS',
-        payload: { questions: response.data } });
-    }).catch((error) => {
-      console.log(error);
-    });
-  };
-}
-
-export function recordMetrics(answers, category) {
-  return (dispatch) => {
-    axios.post(`${ROOT_URL}/metrics${API_KEY}`, { score: answers, category }).then((response) => {
-      console.log('metrics recorded');
-    }).catch((err) => {
-      console.log(err);
-    });
-  };
-}
-
-export function createQuestion(question, history) {
-  return (dispatch) => {
-    axios.post(`${ROOT_URL}/questions${API_KEY}`, question).then((response) => {
-      console.log('question recorded');
-    }).catch((err) => {
-      console.log(err);
-    });
-  };
-}
-
-export function createSurvey(questions, history) {
-  return (dispatch) => {
-    axios.post(`${ROOT_URL}/surveys${API_KEY}`, questions).then((response) => {
-      console.log('survey recorded');
-      history.push('/');
-    }).catch((err) => {
-      console.log(err);
-    });
-  };
-}
-
-
-export function fetchMetrics() {
-  return (dispatch) => {
-    axios.get(`${ROOT_URL}/metrics${API_KEY}`).then((response) => {
-      console.log(response.data);
-      return dispatch({ type: 'FETCH_METRICS',
-        payload: { metrics: response.data } });
+    axios.post(`${ROOT_URL}/`, email).then((response) => {
+      console.log('email was sent');
     }).catch((error) => {
       console.log(error);
     });
