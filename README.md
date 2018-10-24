@@ -1,5 +1,5 @@
 # Halendr Company page
 
-Basic react page for Halendr company
+React webpage for Halendr company information
 
 Deployed version can be found at halendrcompany.surge.sh
